@@ -1,0 +1,123 @@
+;
+;  File:          Config.bib for 86Duino_80B BSP
+;  Last updated:  March 23, 2015 
+;
+;
+MEMORY
+
+    #if defined IMGRAM64
+        ; 64 MB of RAM (note: AUTOSIZE will adjust boundary)
+        NK       80220000  009E0000  RAMIMAGE
+        RAM      80C00000  03400000  RAM
+        ; Override the default value in startup.asm
+        nk.exe:dwOEMTotalRAM            00000000 04000000       FIXUPVAR
+    #elif defined IMGRAM128
+        ; 128 MB of RAM (note: AUTOSIZE will adjust boundary)
+        NK       80220000  009E0000  RAMIMAGE
+        RAM      80C00000  07400000  RAM
+        ; Override the default value in startup.asm
+        nk.exe:dwOEMTotalRAM            00000000 08000000       FIXUPVAR
+    #elif defined IMGRAM256
+        ; 256 MB of RAM (note: AUTOSIZE will adjust boundary)
+        NK       80220000  009E0000  RAMIMAGE
+        RAM      80C00000  0F400000  RAM
+        ; Override the default value in startup.asm
+        nk.exe:dwOEMTotalRAM            00000000 10000000       FIXUPVAR
+    #else
+        NK       80220000  009E0000  RAMIMAGE
+        ; NK Start+NK length+RAM length is the MINIMUM guaranteed RAM the device WILL have, and MUST be larger than nk.bin
+        ; auto detect RAM at runtime, so passes -1 here for romimage
+        RAM      80C00000  7F3FFFFF  RAM ; 80C00000 + 7F3FFFFF = ffffffff
+      
+        ; dwOEMTotalRAM is the MAXIMUM RAM a device MIGHT have
+        ; 512MB allows the BSP and kernel to auto detect values above 512MB
+        nk.exe:dwOEMTotalRAM 0    20000000  FIXUPVAR
+    #endif
+
+    DMA       80100000  00030000  RESERVED   ; Native DMA reserved.
+    BLDR      80130000  00050000  RESERVED   ; bootloader loads here - see bldr.bib
+    BLDRRAM1  80180000  0007C000  RESERVED   ; bootloader uses this as RAM - see bldr.bib
+    BLDRRAM2  801FE000  00001000  RESERVED   ; bootloader uses this as RAM - see bldr.bib
+    BOOTARGS  801FFF00  00000100  RESERVED   ; Boot arguments
+    EDBG_DMA  80200000  00020000  RESERVED   ; EDBG DMA buffer
+    FRAMEBUF  800A0000  00020000  RESERVED
+    NSCIRDA   801BC000  00020000  RESERVED
+    AUDIOBUF  801FC000  00002000  RESERVED
+    LOADRBUF  801FFF00  00000100  RESERVED
+
+
+; Hard reset the system on a software reboot?
+;
+IF BSP_HARDRESET
+    nk.exe:pdwHardReset        00000000          1       FIXUPVAR
+ELSE
+    nk.exe:pdwHardReset        00000000          0       FIXUPVAR
+ENDIF
+
+; This fix-up variable is a bitfield that can be used to initialize
+; the OAL debug zones per oal_log.h.  Uncomment the line and
+; change the hexadecimal bits to enable the desired zones.  The
+; default value (0x0000000B) enables the OAL_LOG_ERROR,
+; OAL_LOG_WARN, and OAL_LOG_INFO zones, and will be used by
+; OEMInit if the line remains commented out.
+;
+;  nk.exe:initialOALLogZones     00000000 0x0000000B       FIXUPVAR
+
+; This fix-up variable is a bitfield that can be used to initialize
+; the Kernel debug zones per kernel.h.  Uncomment the line and
+; change the hexadecimal bits to enable the desired zones.  The
+; default value (0x00000100) enables the ZONE_DEBUG.
+;
+; kernel.dll:initialKernelLogZones 00000000 00000110       FIXUPVAR
+
+; This fix-up variable determines the amount of memory the BSP
+; reserves for Watson dump capture.  The current default behavior is
+; to default to zero unless the image has SYSGEN_WATSON_DMPGEN
+; defined.  The default size is 300KiB.
+;
+; @CESYSGEN IF CE_MODULES_OSAXST0
+nk.exe:dwOEMDrWatsonSize  00000000   0x4B000               FIXUPVAR
+; @CESYSGEN ENDIF
+
+CONFIG
+   AUTOSIZE=ON
+
+; @CESYSGEN IF !NK_NKNOCOMP
+    COMPRESSION=ON
+; @CESYSGEN ENDIF !NK_NKNOCOMP
+; @CESYSGEN IF NK_NKNOCOMP
+    COMPRESSION=OFF
+; @CESYSGEN ENDIF NK_NKNOCOMP
+
+IF IMGPROFILER
+   PROFILE=ON
+ELSE
+   PROFILE=OFF
+ENDIF
+
+   KERNELFIXUPS=ON
+
+IF IMGPERSISTENTSTORAGE
+    FSRAMPERCENT=0x00000010
+ENDIF
+
+IF IMGTINYFSRAM
+    FSRAMPERCENT=0x00000080
+ENDIF
+
+;
+; ROMFLAGS is a bitmask of options for the kernel
+;   ROMFLAGS    0x0001  Disallow Paging
+;   ROMFLAGS    0x0010  Trust Module only
+;
+IF IMGTRUSTROMONLY
+    ROMFLAGS=10
+ELSE
+    ROMFLAGS=0
+ENDIF
+
+
+IF _TGTCPUFAMILY=x86
+    ROMOFFSET=80000000
+ENDIF
+

@@ -1,0 +1,12 @@
+OBJECTS=\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\kdioctl_x86.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\kitldrv_x86.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\kitleth_x86.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\kitlioctl.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\kitlser_x86.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\kitlmain_x86.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\kitl_x86.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\ethgsec_x86.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\pcihelp_x86.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\base\obj\x86\retail\resourcemanager.obj
+

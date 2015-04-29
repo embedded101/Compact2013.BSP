@@ -1,0 +1,501 @@
+EnvHash:
+439e4748558115715bade67cb1152c6c
+EnvVars:
+ADEFINES
+ASM_ARCH_CMD_LINE
+CDEBUG_DEFINES
+CDECLDECORATION
+CODEPAGE
+CODE_ANALYSIS_CMD_LINE
+C_ARCH_CMD_LINE
+ERRORFORBANNEDAPIS_CMD_LINE
+EXCEPTION_CPP_CMD_LINE
+EXCEPTION_EXTERN_C_CMD_LINE
+HEADEROBJNAME
+LDEFSTACK
+LIBRARIAN_FLAGS
+LOCALE
+MAKEDIR
+OBJECTS
+OPTIMIZE_FAVOR_FLAG
+PASS0_SOURCEDIR
+PRECOMPILED_CPP_ONLY_CMD_LINE
+PRECOMPILED_C_ONLY_CMD_LINE
+PRECOMPILED_HEADEROBJNAME
+RTTI_CMD_LINE
+SG_OUTPUT_ROOT
+SOURCES
+TARGETNAME
+WARNLEVEL_CMD_LINE
+WINCEDEBUG
+_DOTNETSDKROOT
+_PLATFORMROOT
+_TARGETPLATROOT
+_TGTCPU
+_TGTCPUDEFINES
+_TGTCPUFAMILY
+_TGTPLAT
+_WINCEROOT
+Includes:
+C:\WINCE800\public\common\oak\misc\makefile.def
+C:\WINCE800\public\common\oak\misc\Sources.default
+C:\WINCE800\platform\86Duino_80B\sources.cmn
+C:\wince800\platform\86duino_80b\src\bootloader\biosloader\iniparser\sources
+C:\WINCE800\public\common\oak\misc\Sources.CE
+C:\WINCE800\public\common\oak\misc\sources.ReleaseType_PLATFORM
+Macros:
+ACF_SOURCES = parser.c util.c
+ADDLIB_SOURCES = 
+AFLAGS =  -c -coff -Cx -Zm -I. -IC:\WINCE800\platform\86Duino_80B\src\inc -IC:\WINCE800\platform\common\src\soc\x86_ms_v1\inc -IC:\WINCE800\platform\common\src\x86\inc -IC:\WINCE800\platform\common\src\inc -IC:\WINCE800\public\common\sdk\inc -IC:\WINCE800\public\common\oak\inc -IC:\WINCE800\public\common\ddk\inc -IC:\WINCE800\public\common\sdk\inc\cestl -IC:\WINCE800\public\common\sdk\inc\crt -I.\Resource\0409 
+ALLOW_BITFIELD_NON_INT = 1
+ALLOW_GTR_64KB_SOURCE = 1
+ALLOW_MISMATCHED_TYPES = 
+ALLOW_NAMELESS_STRUCT = 1
+ALLOW_TYPEDEF_IN_PARENS = 1
+ALLOW_UNREFERENCED_LOCAL_FUNCTION = 1
+ALLOW_UNREF_FORMAL_PARAMS = 1
+ALLUSERSPROFILE = C:\ProgramData
+APPDATA = C:\Users\Samuel\AppData\Roaming
+AS = ml
+ASSEMBLER = ml.exe -nologo
+ASSEMBLER_CMD_LINE =  -c -coff -Cx -Zm -I. -IC:\WINCE800\platform\86Duino_80B\src\inc -IC:\WINCE800\platform\common\src\soc\x86_ms_v1\inc -IC:\WINCE800\platform\common\src\x86\inc -IC:\WINCE800\platform\common\src\inc -IC:\WINCE800\public\common\sdk\inc -IC:\WINCE800\public\common\oak\inc -IC:\WINCE800\public\common\ddk\inc -IC:\WINCE800\public\common\sdk\inc\cestl -IC:\WINCE800\public\common\sdk\inc\crt -I.\Resource\0409 
+ATAPI_COMPONENTS =  atapi_pcio atapi_pcio_cd atapi_pcip_pdc20262 atapi_pcip_pdc40518
+ATL_LIBS = C:\WINCE800\others\atl9\lib\x86\atls.lib C:\WINCE800\others\atl9\lib\x86\atlosapis.lib
+ATL_LIBSD = C:\WINCE800\others\atl9\lib\x86\atlsd.lib C:\WINCE800\others\atl9\lib\x86\atlosapis.lib
+A_DEBUG_INFO_FLAG = -Zi
+BAD_POINTER_TO_MEMBER_SYNTAX = 1
+BROKEN_PCH = 1
+BSP_AUTOLAUNCH_CORECON = 1
+BSP_DISPLAY_NOP = 1
+BSP_ENABLE_AGGRESSIVEFLUSHING = 1
+BSP_ENABLE_AUTOLAUNCH = 1
+BSP_ENABLE_FTP = 1
+BSP_ENABLE_IPBROADCAST = 1
+BSP_ENABLE_TELNET = 1
+BSP_NIC_R6040 = 1
+BSP_SERIAL = 1
+BSP_USB_OHCI = 1
+BUILDMSG = 
+BUILDROOT = C:\WINCE800\platform\86Duino_80B
+BUILD_DEFAULT = -nmake -nologo
+BUILD_MULTIPROCESSOR = 0
+CBUG_FLAGS = -wd4007 -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -wd4603 -wd4627 -wd4100 -wd4201 -wd4115 -wd4214 -wd4049 -wd4505 -MT -U_MT
+CC = cl
+CCOMPILER = cl.exe -nologo 
+CDEBUG_DEFINES = -DNDEBUG=1
+CDEBUG_FLAGS = -Ox -Os -Oy- -GF -Zi -d2Zi+ -FdC:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\lib\x86\retail\iniparse.pdb
+CDECLDECORATION = _
+CDEFINES = -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=800 -D_WIN32_WCE=0x0800 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -Dx86 -D_X86_ -D_MIDL_USE_GUIDDEF_ -DNDEBUG=1 -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252
+CEBASE = 1
+CELLCORE_MODULES =  toolbox
+CE_MODULES = coredll kcoredll nk nkloader oem oalioctl ceddk mspart device regenum busenum openmpce giisr mmtimer pci pcmconv serial filesys fsdmgr romfsd pm nledsrv timezones msvcp110 msvcr110 cmd shell loaddbg shellcelog DllHeapInfoExt relfsd relfsdext lpcd lpcrt secur32 ntlmssp ntlmssp_svc schannel credman httplite servicesFilter servicesStart servicesEnum services webservices winsock afd netio ws2 ws2instl wspm nspm ws2k ws2serv ssllsp tcpip netio nsi nsiproxy winnsi nsisvc tcpipreg rtl8139 e100bex ne2000 netmui iphlpapi dhcp dhcpv6 ndis cxport crypt32 ncrypt keyiso msasn1 alpcd rpcrt4core netbios ping ipconfig tracert route netstat ndisconfig ipv6 gwes keybd pointer touch kbdus mgtt_o display fonts GweUser waveapi audiodrv wavesamples waveapic uiproxy 8042keyboard nopkeyboard atapi usbhost usbd usbotg usbhid usbmsc usbdisk6 usbaudio hidparse kbdhid conshid MouHid exfat fatutil udfs cdfs cereg cdrom rsaenh bcrypt ccfgsvc nls nlslocale nlssorting nlsnormalize toolhelp vmini rt_tests ceperf_module
+CFLAGS = -c -I. -IC:\WINCE800\platform\86Duino_80B\src\inc -IC:\WINCE800\platform\common\src\soc\x86_ms_v1\inc -IC:\WINCE800\platform\common\src\x86\inc -IC:\WINCE800\platform\common\src\inc -IC:\WINCE800\public\common\sdk\inc -IC:\WINCE800\public\common\oak\inc -IC:\WINCE800\public\common\ddk\inc -IC:\WINCE800\public\common\sdk\inc\cestl -IC:\WINCE800\public\common\sdk\inc\crt -I.\Resource\0409 -Ox -Os -Oy- -GF -Zi -d2Zi+ -FdC:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\lib\x86\retail\iniparse.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=800 -D_WIN32_WCE=0x0800 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -Dx86 -D_X86_ -D_MIDL_USE_GUIDDEF_ -DNDEBUG=1 -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -WX /arch:IA32
+CHOCOLATEYINSTALL = C:\Chocolatey
+CINCLUDES = -I. -IC:\WINCE800\platform\86Duino_80B\src\inc -IC:\WINCE800\platform\common\src\soc\x86_ms_v1\inc -IC:\WINCE800\platform\common\src\x86\inc -IC:\WINCE800\platform\common\src\inc -IC:\WINCE800\public\common\sdk\inc -IC:\WINCE800\public\common\oak\inc -IC:\WINCE800\public\common\ddk\inc -IC:\WINCE800\public\common\sdk\inc\cestl -IC:\WINCE800\public\common\sdk\inc\crt -I.\Resource\0409
+CMD = C:\WINDOWS\system32\cmd.exe /c
+CODEPAGE = 1252
+CODE_ANALYSIS_CMD_LINE = 
+COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+COMPUTERNAME = D5421-E101
+COMSPEC = C:\WINDOWS\system32\cmd.exe
+CONFORMING_FORSCOPE = 
+CONLY_FLAGS =  /Gy
+COPY = C:\WINDOWS\system32\cmd.exe /c copy
+COPYCMD = /y
+COREDLL_COMPONENTS = coremain thunks corepolicystub showerr corecrt asyncio devenum devload coretp corebuildinfo coreversionstd fiber coreloc cryptapi accapi battery nled snotify rectapi wmgr_c mgdi_c accel_c messagedialogboxthunk dsa mmwave mmsnd mmmix waveapicfwd coreimmstub multiui fmtmsg fmtres serdev delayedbootworknoapi crypthash rsa32_coredll
+CPP = cl
+CRTINCLUDEPATH = C:\WINCE800\public\common\sdk\inc\cestl;C:\WINCE800\public\common\sdk\inc\crt
+CRT_COMPONENTS = ccrt0 msvcrt
+CSC = "C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe"
+CSC_DEBUG_CMD_LINE = /debug+ /debug:full
+CSC_OPTIMIZE_CMD_LINE = /optimize+
+CVTRES = cvtres -machine:x86 /WINDOWSCE
+CXX = cl
+CXXCOMPILER = cl.exe -nologo 
+C_ARCH_CMD_LINE = /arch:IA32
+C_COMMAND_LINE_OPTIONS = -c -I. -IC:\WINCE800\platform\86Duino_80B\src\inc -IC:\WINCE800\platform\common\src\soc\x86_ms_v1\inc -IC:\WINCE800\platform\common\src\x86\inc -IC:\WINCE800\platform\common\src\inc -IC:\WINCE800\public\common\sdk\inc -IC:\WINCE800\public\common\oak\inc -IC:\WINCE800\public\common\ddk\inc -IC:\WINCE800\public\common\sdk\inc\cestl -IC:\WINCE800\public\common\sdk\inc\crt -I.\Resource\0409 -Ox -Os -Oy- -GF -Zi -d2Zi+ -FdC:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\lib\x86\retail\iniparse.pdb -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=800 -D_WIN32_WCE=0x0800 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -Dx86 -D_X86_ -D_MIDL_USE_GUIDDEF_ -DNDEBUG=1 -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 -WX /arch:IA32 -wd4007 -Zc:wchar_t- -Zc:forScope- -wd4867 -wd4430 -wd4603 -wd4627 -wd4100 -wd4201 -wd4115 -wd4214 -wd4049 -wd4505 -MT -U_MT /FC -W3 /GR-
+C_DEBUG_INFO_FLAG = -Zi -d2Zi+
+DCOM_MODULES =  dllhost dcomssd ole32 uuid rpcrt4 rpcrt4legacy oleaut32
+DEBUG_LINK_CMD_LINE = -debug -incremental:no -debugtype:cv,fixup,PDATA -novcfeature
+DEFAULT_LOCALE = en-US
+DEFFILE = iniparse.def
+DEFFILEFLAG = -def:iniparse.def
+DEPRECATE_BANNED_CRT = 
+DEPRECATE_UNSAFE_CRT = 
+DEP_COMPATIBLE = 1
+DEVICE_COMPONENTS = devcore iorm pmif
+DLLBASE = 0x10000000
+DLLENTRYOPTION = -include:_DllMain -entry:_DllMainCRTStartup
+DLL_EXT = dll
+ECHO = C:\WINDOWS\system32\cmd.exe /c echo
+ENABLE_OPTIMIZER = 1
+ERRORFORBANNEDAPIS = 0
+ERRORFORBANNEDAPIS_CMD_LINE = 
+EXCEPTION_CPP = NONE
+EXCEPTION_EXTERN_C = THROW
+EXEBASE = 0x00010000
+EXEENTRYOPTION = -entry:WinMainCRTStartup
+EXPORTFILE = 
+EXTERNAL_SRCDIR = .
+FATUTIL_COMPONENTS = fatutil_noui fatutil_main exfatutil
+FILESYS_COMPONENTS = fsheap fsmain fsprofile fsadvertise fseventlog fsysram fsreghive fsdbase fspass
+FIXTS = C:\WINCE800\public\common\oak\bin\i386\fixts.exe
+FONTS_COMPONENTS =  segoeui tahoma
+FP_NO_HOST_CHECK = NO
+GWE1_COMPONENTS = wmbase gweshare gwesmain immthunk msgque GSetWinLong CePtr GwePerf foregnd idle kbdui uibase msgbeep audio
+GWE2_COMPONENTS = mgbase mgbitmap mgblt mgblt2 mgdc mgdibsec mgdraw mgrgn mgwinmgr tchui mggradfill mgalphablend mgtt mgdrwtxt mgpal mgpalnat
+GWE3_COMPONENTS = accel btnctl caret cascade imectl clipbd cmbctl defwndproc dlgmgr dlgmnem edctl gcache gwectrl icon iconcmn imgctl lbctl loadbmp loadimg menu menuscrl mNoOver menugdi menurc_stubs MouseCursorOnly iconcurs mcursor mcursor8 mNoTapUI
+GWE4_COMPONENTS = nclient sbcmn scbctl startup stcctl winmgr oom sbcmnview nclientview gcacheview btnctlview stcctlview cmbctlview edctlview lbctlview menuview btngdi btnrc_stubs sbuiGdi sbuirc_stubs msgbox msgbox_hpc dlgmgr_hpc menu_hpc cmbctl_hpc EditControlOs timer mgtci
+GWES_COMPONENTS = gwe1 gwe2 gwe3 gwe4
+GWEUSERLIB_COMPONENTS =  calibrui
+GWEUSER_COMPONENTS = GweUserMain GweUserStartUI GweUserCalibrateUI
+GWEUSER_UI_COMPONENTS =  startui
+HOMEDRIVE = C:
+HOMEPATH = \Users\Samuel
+HOSTCOMPILER = cl.exe
+HTML_MODULES =  msxml3_noui shlwapi_noui uuid
+IMGEBOOT = 1
+IMGNODEBUGGER = 1
+IMGNODFLTDDK = 1
+IMGNOKITL = 1
+IMGRAM128 = 1
+INCLUDEPATH = .;C:\WINCE800\platform\86Duino_80B\src\inc;C:\WINCE800\platform\common\src\soc\x86_ms_v1\inc;C:\WINCE800\platform\common\src\x86\inc;C:\WINCE800\platform\common\src\inc;C:\WINCE800\public\common\sdk\inc;C:\WINCE800\public\common\oak\inc;C:\WINCE800\public\common\ddk\inc;C:\WINCE800\public\common\sdk\inc\cestl;C:\WINCE800\public\common\sdk\inc\crt
+INCLUDES = C:\WINCE800\platform\86Duino_80B\src\inc;C:\WINCE800\platform\common\src\soc\x86_ms_v1\inc;C:\WINCE800\platform\common\src\x86\inc;C:\WINCE800\platform\common\src\inc
+KCOREDLL_COMPONENTS = kcoremain kthunks corepolicystub showerr corecrt asyncio devenum devload coretp corebuildinfo coreversionstd fiber coreloc cryptapi accapi battery nled snotify rectapi wmgr_c mgdi_c accel_c messagedialogboxthunk dsa mmwave mmsnd mmmix waveapicfwd coreimmstub multiui fmtmsg fmtres serdev delayedbootworknoapi crypthash rsa32_coredll
+LDEFINES = -MERGE:.rdata=.text /FIXED:NO -ignore:4001,4070,4078,4086,4089,4096,4099,4108,4229 /STACK:65536,4096
+LDEFSTACK = /STACK:65536,4096
+LIBRARIAN = link.exe -lib 
+LINKER = link.exe /LARGEADDRESSAWARE /filealign:0x1000
+LINKER_DEBUG =  /opt:ref,icf
+LINKER_SUBSYSTEM = /subsystem:windowsce,8.00
+LOCALAPPDATA = C:\Users\Samuel\AppData\Local
+LOCALE = 0409
+LOGFILEBASE = C:\WINCE800\build
+LOGFILEDIR = C:\WINCE800\
+LOGONSERVER = \\MicrosoftAccount
+MACHINEOPTION = -machine:x86
+MAKE = C:\WINCE800\public\common\oak\Bin\i386\nmake.exe
+MAKECMD = C:\WINCE800\public\common\oak\Bin\i386\nmake.exe 
+MAKEDIR = C:\wince800\platform\86duino_80b\src\bootloader\biosloader\iniparser
+MAKEFLAGS =  
+MANAGED_ADDMODULES_DEFAULT_DIR = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\target\x86\retail
+MANAGED_CS = 1
+MANAGED_DLL_TARGET_DIRECTORY = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\target\x86\retail
+MANAGED_EXE_TARGET_DIRECTORY = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\target\x86\retail
+MANAGED_FRAMEWORK_DIR = C:\WINCE800\public\netcf\sdk\target\managed\retail
+MANAGED_INTERMEDIATE_PDB = C:\wince800\platform\86duino_80b\src\bootloader\biosloader\iniparser\obj\x86\retail\iniparse.pdb
+MANAGED_INTERMEDIATE_TARGET = C:\wince800\platform\86duino_80b\src\bootloader\biosloader\iniparser\obj\x86\retail\iniparse.
+MANAGED_MODULE_TARGET_DIRECTORY = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\target\x86\retail
+MANAGED_REFERENCES_DEFAULT_DIR = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\target\x86\retail
+MANAGED_TARGET_PDB = \iniparse.pdb
+MANAGED_WINEXE_TARGET_DIRECTORY = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\target\x86\retail
+MC_SOURCEDIR = .
+MESSAGE_COMPILER = mc
+MGTT_O_COMPONENTS =  decompdrv
+MIDLCOMPILER = midl.exe -nologo /env win32
+MIDL_FLAGS =  -no_stamp -sal
+MIDL_OPTIMIZATION = -Oicf
+MKDIR = C:\WINDOWS\system32\cmd.exe /c mkdir
+MKTYPLIBFLAGS = /win32 /mktyplib203 /no_stamp
+MSBUILD = C:\Windows\Microsoft.NET\Framework\v4.0.30319\msbuild.exe
+MSBUILDLOADMICROSOFTTARGETSREADONLY = true
+MSBUILD_FLAGS =  /consoleloggerparameters:NoSummary
+NETCF_MODULES =  mscoree k_mscoree cgacutil cflauncher CustomMarshalers mscorlib Microsoft_Visualbasic System_Data System System_Net_Irda System_Web_Services System_Xml System_Xml_Linq System_Core System_Data_DataSetExtensions System_Runtime_Serialization System_ServiceModel
+NETIO_WFP_COMPONENTS = netiowfpstub
+NKLOADER_COMPONENTS = nkldr
+NK_COMPONENTS =  oemstub nklogger nkmsgq nkmapfile nktzinit nkcompr
+NLS_COMPONENTS =  en_US
+NOINCLUDEOBJMAC = 1
+NO_WCHAR_T = 1
+NUMBER_OF_PROCESSORS = 4
+O = obj\x86\retail
+OBJ_PATH = C:\wince800\platform\86duino_80b\src\bootloader\biosloader\iniparser
+OEM_COMPONENTS = nkstub oemmain oemmain_statickitl
+OLE32_COMPONENTS = dcomole stg
+OLEAUT32_COMPONENTS = oaall idispproxy
+OPTIMIZE_FAVOR = SPACE
+OPTIMIZE_FAVOR_FLAG = -Os
+OS = Windows_NT
+OSSVCS_MODULES =  
+PASS0_HEADERDIR = .
+PASS0_SOURCEDIR = .
+PATH = C:\WINCE800\sdk\bin\i386\x86;C:\WINCE800\sdk\bin\i386;C:\WINCE800\sdk\bin\i386\x86;C:\WINCE800\public\common\oak\Bin\i386;C:\WINCE800\private\bin\i386;C:\WINCE800\private\bat;C:\WINCE800\public\common\oak\misc;C:\WINCE800\developr\Samuel;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\NativeBinaries/x86;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft SDKs\Windows Azure\CLI\wbin;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI\wbin;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Skype\Phone\;C:\Chocolatey\bin;C:\Program Files (x86)\Git\cmd;;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Microsoft Platform Builder\8.00\cepb\ideVS
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+PBCONFIG = 86Duino_80B X86 Release
+PBCONFIGTAG = D7B246B
+PBWORKSPACE = C:\WINCE800\OSDESI~1\MYOSDE~1\MYOSDE~1\MYOSDE~1.PBX
+PBWORKSPACEROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign
+PKGDEFAPPLICATIONCONFIGFILE = C:\Users\Samuel\AppData\Local\Microsoft\VisualStudio\12.0\devenv.exe.config
+PM_COMPONENTS =  pmstubs pm_pdd_common
+PRECOMPILED_CPP_ONLY_CMD_LINE = 
+PRECOMPILED_C_ONLY_CMD_LINE = 
+PRECOMPILED_GENERATE_CMD_LINE = /Tc
+PRJ_BOOTDEVICE_ATAPI = 1
+PRJ_ENABLE_FSREGHIVE = 1
+PROCESSOR_ARCHITECTURE = x86
+PROCESSOR_ARCHITEW6432 = AMD64
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+PROCESSOR_LEVEL = 6
+PROCESSOR_REVISION = 3a09
+PROGRAMDATA = C:\ProgramData
+PROGRAMFILES = C:\Program Files (x86)
+PROGRAMW6432 = C:\Program Files
+PROMPT = 
+PSMODULEPATH = C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\PowerShell\Modules\;C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\ServiceManagement
+PUBLIC = C:\Users\Public
+RC = rc
+RCFLAGS = 
+RCOMPILER = rc.exe -r -I. -IC:\WINCE800\platform\86Duino_80B\src\inc -IC:\WINCE800\platform\common\src\soc\x86_ms_v1\inc -IC:\WINCE800\platform\common\src\x86\inc -IC:\WINCE800\platform\common\src\inc -IC:\WINCE800\public\common\sdk\inc -IC:\WINCE800\public\common\oak\inc -IC:\WINCE800\public\common\ddk\inc -IC:\WINCE800\public\common\sdk\inc\cestl -IC:\WINCE800\public\common\sdk\inc\crt -I.\Resource\0409 -DWINCEINTERNAL -DUNDER_CE=800 -D_WIN32_WCE=0x0800 -DINTERNATIONAL -l 409 -c 1252
+RDEFINES = -DWINCEINTERNAL -DUNDER_CE=800 -D_WIN32_WCE=0x0800 -DINTERNATIONAL -l 409 -c 1252
+RELEASETYPE = PLATFORM
+RENUMBERICONIDS_CMD = C:\WINCE800\public\common\oak\bin\i386\RenumberIconIds.exe
+RES2RES = C:\WINCE800\public\common\oak\bin\i386\res2res.exe
+RESGEN = resgen.exe
+RESX_RESOURCE_TARGET_PATH = C:\wince800\platform\86duino_80b\src\bootloader\biosloader\iniparser\obj\x86\retail
+RTTI = NO
+RTTI_CMD_LINE = /GR-
+SAFESEH = 1
+SCRIPTNAME = BldDemo1.bat
+SCRIPTPARAMS =  -q
+SECURITY_LINK_CMD_LINE = /safeseh 
+SERVERS_MODULES =  telnetd ftpd
+SESSIONNAME = Console
+SG_OAKSRCLIB = C:\WINCE800\public\common\oak\lib\x86\retail
+SG_OUTPUT_OAKLIB = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\oak\lib\x86\retail
+SG_OUTPUT_OAKTGT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\oak\target\x86\retail
+SG_OUTPUT_OAKTGTMGD = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\oak\target\managed
+SG_OUTPUT_OAK_MANAGED = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\oak\target\managed\retail
+SG_OUTPUT_ROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen
+SG_OUTPUT_SDKLIB = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\sdk\lib\x86\retail
+SG_OUTPUT_SDKTGTMGD = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\sdk\target\managed
+SG_OUTPUT_SDK_MANAGED = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\sdk\target\managed\retail
+SHELL_MODULES =  wceldcmd unldcmd
+SIGNBIN = C:\WINCE800\public\common\oak\bin\i386\signbin.cmd
+SN = sn.exe
+SOURCELIBS = 
+SOURCELIBS_DELIMITED = **
+SOURCELIBS_NOBATCH =  
+SOURCELIBS_NOBATCH_DELIMITED = **
+SOURCES = parser.c util.c
+SUPPORT_DEFAULT_INT = 1
+SYSGEN_APPDEBUG = 1
+SYSGEN_ATAPI = 1
+SYSGEN_ATAPI_PCIO = 1
+SYSGEN_ATAPI_PCIO_CD = 1
+SYSGEN_ATAPI_PCIP_PDC20262 = 1
+SYSGEN_ATAPI_PCIP_PDC40518 = 1
+SYSGEN_AUDIO = 1
+SYSGEN_AUTH = 1
+SYSGEN_AUTH_SCHANNEL = 1
+SYSGEN_CDFS = 1
+SYSGEN_CERTS = 1
+SYSGEN_CMD = 1
+SYSGEN_CNG_CORE = 1
+SYSGEN_CREDMAN = 1
+SYSGEN_CRYPTO = 1
+SYSGEN_DCOM = 1
+SYSGEN_FATFS = 1
+SYSGEN_FATUTIL_NOUI = 1
+SYSGEN_FONTS_TAHOMA = 1
+SYSGEN_FSDBASE = 1
+SYSGEN_FSPASSWORD = 1
+SYSGEN_FTPD = 1
+SYSGEN_MINGDI = 1
+SYSGEN_MINGWES = 1
+SYSGEN_MININPUT = 1
+SYSGEN_MINWMGR = 1
+SYSGEN_MSVCP = 1
+SYSGEN_MSVCR = 1
+SYSGEN_MSXML = 1
+SYSGEN_NETCF = 1
+SYSGEN_NETUTILS = 1
+SYSGEN_NETWORKING = 1
+SYSGEN_OLE = 1
+SYSGEN_RELFSD = 1
+SYSGEN_REMOTETOOLS = 1
+SYSGEN_SERDEV = 1
+SYSGEN_SERVICES = 1
+SYSGEN_SHELL = 1
+SYSGEN_TELNETD = 1
+SYSGEN_TOOLHELP = 1
+SYSGEN_UDFS = 1
+SYSGEN_UIPROXY = 1
+SYSGEN_USB = 1
+SYSGEN_USB_AUDIO = 1
+SYSGEN_USB_HID = 1
+SYSGEN_USB_HID_CLIENTS = 1
+SYSGEN_USB_HID_KEYBOARD = 1
+SYSGEN_USB_HID_MOUSE = 1
+SYSGEN_USB_STORAGE = 1
+SYSGEN_WCELDCMD = 1
+SYSTEMDRIVE = C:
+SYSTEMROOT = C:\WINDOWS
+S_ATL_LIBS = C:\WINCE800\others\atl9\lib\x86\atls.lib C:\WINCE800\others\atl9\lib\x86\atlosapis.lib
+S_ATL_LIBSD = C:\WINCE800\others\atl9\lib\x86\atlsd.lib C:\WINCE800\others\atl9\lib\x86\atlosapis.lib
+TARGETDEFNAME = iniparse
+TARGETEXEFILES = 
+TARGETLIBFILES = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\lib\x86\retail\iniparse.lib
+TARGETLIBS =  C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\oak\lib\x86\retail\ccrt0.lib C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\oak\lib\x86\retail\msvcrt.lib
+TARGETNAME = iniparse
+TARGETOBJFILES =  
+TARGETTHREADMODEL = ST
+TARGETTYPE = LIBRARY
+TARGET_PDB_NAME = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\lib\x86\retail\iniparse.pdb
+TCPIP_WFP_COMPONENTS = wfpstub
+TEMP = C:\Temp\bld_58522
+TGTCPUDEFINES = -Dx86 -D_X86_
+TGTCPUISANAME = x86
+TMP = C:\Temp\bld_58522
+TYPE = C:\WINDOWS\system32\cmd.exe /c type
+USERDOMAIN = D5421-E101
+USERDOMAIN_ROAMINGPROFILE = D5421-E101
+USERNAME = Samuel
+USERPROFILE = C:\Users\Samuel
+USING_PB_WORKSPACE_ENVIRONMENT = 1
+VISUALSTUDIODIR = C:\Users\Samuel\Documents\Visual Studio 2013
+VISUALSTUDIOEDITION = Microsoft Visual Studio Ultimate 2013
+VISUALSTUDIOVERSION = 12.0
+VS110COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\
+VS120COMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\Tools\
+VSLANG = 1033
+VSSDK110INSTALL = C:\Program Files (x86)\Microsoft Visual Studio 11.0\VSSDK\
+WARNISERROR = 1
+WARNLEVEL_CMD_LINE = -W3
+WAVEAPIC_COMPONENTS =  waveapic_wave waveapic_snd waveapic_mix
+WAVEAPI_COMPONENTS =  wapiwave audevman swmixer
+WECSDK = Compact 2013 SDK for eBox-3350MX
+WINCEDEBUG = retail
+WINCEDEBUG_COMPILE = retail
+WINCEMAP = 1
+WINCEOEM = 1
+WINCETREE = 
+WINCEVSCRT_DEBUG_SUFFIX = 
+WINDIR = C:\WINDOWS
+WINSOCK_COMPONENTS = sslsock
+WPP_TARGETS = 
+XCOPY = xcopy /exclude:C:\WINCE800\public\common\oak\misc\exclude.txt
+_BD_PROJECTOAKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\oak
+_BLDDEMO_CLEAN = 1
+_BLDDEMO_CLEANPLAT = 1
+_BLDDEMO_EXITCODE = 0
+_BUILDERR = : ERROR:
+_BUILDMSG = : Message:
+_BUILDOUTPUTFILTER_RUNNING = 1
+_BUILDWRN = : Warning:
+_CDTMP = -D_CRT_SECURE_NO_DEPRECATE -D_USE_32BIT_TIME_T -DUNICODE -D_UNICODE -DUNDER_CE=800 -D_WIN32_WCE=0x0800 -DWINCEOEM -DWINCEINTERNAL -DWIN32 -DSTRICT -Dx86 -D_X86_ -D_MIDL_USE_GUIDDEF_ -DNDEBUG=1 -DINTERNATIONAL -DINTLMSG_CODEPAGE=1252 DUMMY
+_CEBUILDPERF_LOGGER = C:\WINCE800\private\bin\i386\CeBuildPerfLogger.exe
+_CLEAN_PLAT_ALL = 1
+_COMMONDDKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\ddk
+_COMMONOAKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\oak
+_COMMONPUBROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen
+_COMMONSDKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\sdk
+_COREDLL_COMPONENTS = showerr corecrt asyncio devenum devload coretp corebuildinfo coreversionstd fiber coreloc cryptapi accapi battery nled snotify rectapi wmgr_c mgdi_c accel_c messagedialogboxthunk dsa mmwave mmsnd mmmix waveapicfwd coreimmstub multiui fmtmsg fmtres serdev delayedbootworknoapi crypthash rsa32_coredll
+_CPUDEPPATH = x86\retail
+_CPUINDPATH = x86\retail
+_DEPTREES = winceos dcom wgi html netcf servers cellcore ossvcs shell directx ostest viewers CEBASE
+_DOTNET20ROOT = C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727
+_DOTNET20SP2INSTALLED = 1
+_DOTNET30ROOT = C:\WINDOWS\Microsoft.NET\Framework\v3.0
+_DOTNET30SP2INSTALLED = 1
+_DOTNET35ROOT = C:\Windows\Microsoft.NET\Framework\v3.5
+_DOTNET35SP1INSTALLED = 1
+_DOTNET40CLIENTINSTALLED = 1
+_DOTNET40FULLINSTALLED = 1
+_DOTNET40ROOT = C:\Windows\Microsoft.NET\Framework\v4.0.30319
+_DOTNET45INSTALLED = 1
+_DOTNETSDKROOT = C:\Windows\Microsoft.NET\Framework\v4.0.30319\
+_FLATRELEASEDIR = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\RelDir\86Duino_80B_x86_Release
+_HOSTCPUTYPE = i386
+_ISVINCPATH = C:\WINCE800\public\common\sdk\inc
+_LANGIDLIST =  0404 0407 0409 040c 0410 0411 0412 0416 0419 0804 0c0a
+_MAJORVERSION = 8
+_MAKEENVROOT = C:\WINCE800\public\common\oak\misc
+_MANAGED_DIR = retail
+_MANAGED_FRAMEWORK_DIR = C:\WINCE800\public\netcf\sdk\target\managed\retail
+_MANAGED_FRAMEWORK_DIR_CE = C:\WINCE800\public\netcf\sdk\target\managed\retail
+_MDDPROJ = smartfon
+_MINORVERSION = 00
+_NMAKE_VER = 11.00.50727.169
+_OBJDIR = C:\wince800\platform\86duino_80b\src\bootloader\biosloader\iniparser\obj\x86\retail
+_OEMINCPATH = C:\WINCE800\public\common\sdk\inc;C:\WINCE800\public\common\oak\inc;C:\WINCE800\public\common\ddk\inc
+_OSDESIGNDDKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\ddk
+_OSDESIGNOAKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\oak
+_OSDESIGNROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign
+_OSDESIGNSDKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\sdk
+_PB_INSTALL_ROOT = C:\PROGRA~2\MIFAB2~1\8.00
+_PLATCOMMONLIB = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platcomm\86Duino_80B\lib
+_PLATFORMDRIVE = C:
+_PLATFORMROOT = C:\WINCE800\platform
+_PLATLIB = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\lib
+_PREWINCEPATH = C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\CommonExtensions\Microsoft\TeamFoundation\Team Explorer\NativeBinaries/x86;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft SDKs\Windows Azure\CLI\wbin;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI\wbin;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Skype\Phone\;C:\Chocolatey\bin;C:\Program Files (x86)\Git\cmd;
+_PRIVATEDRIVE = C:
+_PRIVATEROOT = C:\WINCE800\private
+_PROJECTDDKROOT = C:\WINCE800\public\CEBASE\ddk
+_PROJECTOAKROOT = C:\WINCE800\public\CEBASE\oak
+_PROJECTROOT = C:\WINCE800\public\CEBASE
+_PROJECTSDKROOT = C:\WINCE800\public\CEBASE\sdk
+_PROJPUBLICROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\WINCE800\PUBLIC
+_PUBLICDRIVE = C:
+_PUBLICROOT = C:\WINCE800\public
+_RELEASEDIR = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\target\x86\retail
+_RELEASELIBDIR = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\platform\86Duino_80B\lib\x86\retail
+_SDKDRIVE = C:
+_SDKROOT = C:\WINCE800\sdk
+_SRCDIR = x86
+_SYSGENDDKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\ddk
+_SYSGENOAKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\oak
+_SYSGENSDKROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen\sdk
+_TARGETPLATROOT = C:\WINCE800\platform\86Duino_80B
+_TESTRES = coreres.res
+_TGTCPU = x86
+_TGTCPUFAMILY = x86
+_TGTOS = CE
+_TGTPLAT = 86Duino_80B
+_TGTPROJ = CEBASE
+_TLTMP = 
+_TOOLSSDKDRIVE = C:
+_TOOLSSDKROOT = C:\WINCE800\tools\public\ext
+_WINCECALLED = 1
+_WINCEDRIVE = C:
+_WINCEOSVER = 800
+_WINCEROOT = C:\WINCE800
+__CPUDIR = x86\retail
+__EXIT_CODE = 0
+__PROJROOT = C:\WINCE800\OSDesigns\MyOSDesign\MyOSDesign\Wince800\86Duino_80B_x86_Retail\cesysgen
+__QBLDNEWDEPTREES = winceos dcom wgi html netcf servers cellcore ossvcs shell directx ostest viewers CEBASE
+__QBLDPASS = preproc
+__SYSGEN_ALPCD = 1
+__SYSGEN_AUDIO_API = 1
+__SYSGEN_BCRYPT = 1
+__SYSGEN_CCFGSVC = 1
+__SYSGEN_CDROM = 1
+__SYSGEN_CEREG = 1
+__SYSGEN_CXPORT = 1
+__SYSGEN_DHCP = 1
+__SYSGEN_DLLHEAPINFOEXT = 1
+__SYSGEN_DSA = 1
+__SYSGEN_GWEUSER = 1
+__SYSGEN_GWEUSER_CALIBRUI = 1
+__SYSGEN_GWEUSER_STARTUI = 1
+__SYSGEN_GWE_MGTCI = 1
+__SYSGEN_GWE_TIMER = 1
+__SYSGEN_HID_KEYBOARD = 1
+__SYSGEN_HID_MOUSE = 1
+__SYSGEN_HID_PARSER = 1
+__SYSGEN_HTTPLITE = 1
+__SYSGEN_INETCORE_UUID = 1
+__SYSGEN_LPC = 1
+__SYSGEN_MOUSE_CURSOR = 1
+__SYSGEN_MSASN1 = 1
+__SYSGEN_MSXML_HEADLESS = 1
+__SYSGEN_NEED_HTTP = 1
+__SYSGEN_NETBIOS = 1
+__SYSGEN_OLEAUT32 = 1
+__SYSGEN_RPCRT4CORE = 1
+__SYSGEN_SHLWAPI = 1
+__SYSGEN_SHLWAPI_HEADLESS = 1
+__SYSGEN_WWSAPI = 1
+___CLEANFLAG = -c
+___OAKROOT = C:\WINCE800\platform\86Duino_80B\oak
+___OLDWINCEREL = 1

@@ -1,0 +1,2 @@
+BUILD: [01:0000000801:ERRORE] NMAKE : fatal error U1073: don't know how to make 'C:\wince800\platform\ebox3300\src\common\kitl\base\obj\x86\debug\kdioctl_x86.obj' {log="C:\WINCE800\platform\ebox3300\src\common\kitl\base\bldsys.log(31)"}
+BUILD: [01:0000000821:ERRORE] TargetCompilePass  -nologo BUILDMSG=Stop.  BUILDROOT=C:\WINCE800\platform\ebox3300 NOLINK=1 NOPASS0=1 failed - rc = 2 {log="C:\WINCE800\platform\ebox3300\src\common\kitl\base\bldsys.log(32)"}

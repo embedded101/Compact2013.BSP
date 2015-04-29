@@ -1,0 +1,12 @@
+OBJECTS=\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\kdioctl_x86.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\kitldrv_x86.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\kitleth_x86.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\kitlioctl.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\kitlser_x86.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\kitlmain_x86.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\kitl_x86.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\ethgsec_x86.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\pcihelp_x86.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\base\obj\x86\debug\resourcemanager.obj
+

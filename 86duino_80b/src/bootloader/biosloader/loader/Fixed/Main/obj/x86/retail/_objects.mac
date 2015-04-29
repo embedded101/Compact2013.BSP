@@ -1,0 +1,12 @@
+OBJECTS=\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\startup.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\bios.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\debug.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\main.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\format.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\drive.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\ini.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\video.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\splash.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\main\obj\x86\retail\decoder.obj
+

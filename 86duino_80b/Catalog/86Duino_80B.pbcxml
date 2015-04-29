@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatalogFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" RequiredVersion="6.00" xmlns="urn:Microsoft.PlatformBuilder/Catalog">
+  <FileInformation Id="FileInformation:86Duino_80B">
+    <Title>86Duino_80B</Title>
+    <Description>86Duino_80B BSP Catalog Items</Description>
+    <Vendor>ICOP Technology Inc.</Vendor>
+    <OSVersion>7.00</OSVersion>
+    <FileVersion>1.0</FileVersion>
+  </FileInformation>
+  <Bsp Id="Bsp:86Duino_80B:X86">
+    <Title>86Duino_80B: X86</Title>
+    <Description>EBOX-3300MX BSP for Windows Embedded Compact 2013</Description>
+    <PlatformDirectory>86Duino_80B</PlatformDirectory>
+    <CpuId>Cpu:X86</CpuId>
+    <BspItemId>R6040:86Duino_80B</BspItemId>
+    <BspItemId>USBHID:86Duino_80B</BspItemId>
+    <BspItemId>Serial1:86Duino_80B</BspItemId>
+    <BspItemId>SerialDebug:86Duino_80B</BspItemId>
+    <BspItemId>ATAPI:86Duino_80B</BspItemId>
+    <BspItemId>HiveRegistry:86Duino_80B</BspItemId>
+    <BspItemId>USBStorage:86Duino_80B</BspItemId>
+    <BspItemId>AutoLaunch:86Duino_80B</BspItemId>
+    <BspItemId>CoreCon:86Duino_80B</BspItemId>
+    <BspItemId>IPAddressBroadcast:86Duino_80B</BspItemId>
+    <BspItemId>AggressiveFlushing:86Duino_80B</BspItemId>
+  </Bsp>
+  <Item Id="R6040:86Duino_80B">
+    <Title>R6040 Ethernet driver</Title>
+    <Description>R6040 Ethernet driver</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_NIC_R6040</Variable>
+    <Module>R6040.dll</Module>
+    <Location>Ethernet</Location>
+    <SourceCode>
+      <Title>$(_WINCEROOT)\PLATFORM\86Duino_80B\SRC\DRIVERS\R6040</Title>
+      <Path>$(_WINCEROOT)\PLATFORM\86Duino_80B\SRC\DRIVERS\R6040</Path>
+    </SourceCode>
+  </Item>
+  <Item Id="ATAPI:86Duino_80B">
+    <Title>ATAPI PCI/IDE Storage Block Driver</Title>
+    <Type>BspSpecific</Type>
+    <Variable>SYSGEN_ATAPI</Variable>
+    <Variable>SYSGEN_FATFS</Variable>
+    <Location>\Storage</Location>
+  </Item>
+  <Item Id="HiveRegistry:86Duino_80B">
+    <Title>Hive-based registry support</Title>
+    <Type>BspSpecific</Type>
+    <SysgenVariable>SYSGEN_FSREGHIVE,SYSGEN_FSRAMROM</SysgenVariable>
+    <Variable>PRJ_ENABLE_FSREGHIVE</Variable>
+    <Variable>PRJ_BOOTDEVICE_ATAPI</Variable>
+    <Location>Storage\ATAPI PCI/IDE Storage Block Driver</Location>
+  </Item>
+  <Item Id="USBHID:86Duino_80B">
+    <Title>USB Keyboard &amp; Mouse (HID) class driver</Title>
+    <Type>BspSpecific</Type>
+    <Variable>SYSGEN_USB_HID</Variable>
+    <Variable>SYSGEN_USB_HID_CLIENTS</Variable>
+    <Location>Input Device</Location>
+  </Item>
+  <Item Id="Serial1:86Duino_80B">
+    <Title>1st Serial Port</Title>
+    <Description>COM1:  IRQ-4, 3F8</Description>
+    <Type>BspSpecific</Type>
+    <Variable>SYSGEN_SERDEV</Variable>
+    <Variable>BSP_SERIAL</Variable>
+    <Location>\Serial Port</Location>
+  </Item>
+  <Item Id="SerialDebug:86Duino_80B">
+    <Title>Enable Serial Debug</Title>
+    <Description>Enable Serial Debug</Description>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_ENABLE_SERIALDEBUG</Variable>
+    <ChooseOneGroup>true</ChooseOneGroup>
+    <Location>Serial Port\1st Serial Port</Location>
+  </Item>
+  <Item Id="USBStorage:86Duino_80B">
+    <Title>USB Mass Storage Class driver</Title>
+    <Description>USB Mass Storage Class driver</Description>
+    <Type>BspSpecific</Type>
+    <Variable>SYSGEN_USB_STORAGE</Variable>
+    <Location>Storage</Location>
+  </Item>
+  <Item Id="AutoLaunch:86Duino_80B">
+    <Title>AutoLaunch</Title>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_Enable_AutoLaunch</Variable>
+    <Location>\Utilities</Location>
+  </Item>
+  <Item Id="CoreCon:86Duino_80B">
+    <Title>CoreCon</Title>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_AutoLaunch_CoreCon</Variable>
+    <Location>Utilities\AutoLaunch</Location>
+  </Item>
+  <Item Id="IPAddressBroadcast:86Duino_80B">
+    <Title>IP Address Broadcast</Title>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_Enable_IPBroadcast</Variable>
+    <Location>Utilities\AutoLaunch</Location>
+  </Item>
+  <Item Id="AggressiveFlushing:86Duino_80B">
+    <Title>Aggressive flushing</Title>
+    <Type>BspSpecific</Type>
+    <Variable>BSP_Enable_AggressiveFlushing</Variable>
+    <Location>Storage\ATAPI PCI/IDE Storage Block Driver\Hive-based registry support</Location>
+  </Item>
+</CatalogFile>

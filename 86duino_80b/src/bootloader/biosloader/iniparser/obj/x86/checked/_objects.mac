@@ -1,0 +1,4 @@
+OBJECTS=\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\iniparser\obj\x86\checked\parser.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\iniparser\obj\x86\checked\util.obj
+

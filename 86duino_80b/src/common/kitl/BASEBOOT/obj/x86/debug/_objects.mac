@@ -1,0 +1,4 @@
+OBJECTS=\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\baseboot\obj\x86\debug\kitldrv_x86.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\common\kitl\baseboot\obj\x86\debug\kitleth_x86.obj
+

@@ -1,0 +1,3 @@
+OBJECTS=\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\fat32\obj\x86\checked\bldr_fat32.obj
+

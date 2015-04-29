@@ -1,0 +1,12 @@
+OBJECTS=\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\startup.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\bios.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\debug.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\main.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\format.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\drive.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\ini.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\video.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\splash.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\bootloader\biosloader\loader\fixed\main\obj\x86\checked\decoder.obj
+

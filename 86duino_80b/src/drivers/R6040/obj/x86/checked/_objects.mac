@@ -1,0 +1,5 @@
+OBJECTS=\
+    C:\wince800\platform\86duino_80b\src\drivers\r6040\obj\x86\checked\r6040interrup.obj\
+    C:\wince800\platform\86duino_80b\src\drivers\r6040\obj\x86\checked\r6040card.obj\
+    C:\wince800\platform\86duino_80b\src\drivers\r6040\obj\x86\checked\r6040.obj
+

@@ -1,0 +1,203 @@
+BUILD: [Thread:SystemTickCount:Type  ] Message
+BUILD: [00:0000000000:PROGC ] Build started with parameters:
+BUILD: [00:0000000000:PROGC ] Build started in directory: C:\WINCE800\platform\ebox3300\src\common\kitl
+BUILD: [00:0000000000:PROG  ] Environment: ALLUSERSPROFILE=C:\ProgramData
+BUILD: [00:0000000000:PROG  ] Environment: APPDATA=C:\Users\XPMUser\AppData\Roaming
+BUILD: [00:0000000000:PROG  ] Environment: BSP_DISPLAY_FLAT=1
+BUILD: [00:0000000000:PROG  ] Environment: BSP_NIC_R6040=1
+BUILD: [00:0000000000:PROG  ] Environment: BUILD_DEFAULT=-nmake -nologo
+BUILD: [00:0000000000:PROG  ] Environment: BUILD_MULTIPROCESSOR=0
+BUILD: [00:0000000000:PROG  ] Environment: CEBASE=1
+BUILD: [00:0000000000:PROG  ] Environment: CommonProgramFiles=C:\Program Files\Common Files
+BUILD: [00:0000000000:PROG  ] Environment: COMPUTERNAME=MYWIN7VM
+BUILD: [00:0000000000:PROG  ] Environment: ComSpec=C:\Windows\system32\cmd.exe
+BUILD: [00:0000000000:PROG  ] Environment: COPYCMD=/y
+BUILD: [00:0000000000:PROG  ] Environment: DEFAULT_LOCALE=en-US
+BUILD: [00:0000000000:PROG  ] Environment: FP_NO_HOST_CHECK=NO
+BUILD: [00:0000000000:PROG  ] Environment: HOMEDRIVE=C:
+BUILD: [00:0000000000:PROG  ] Environment: HOMEPATH=\Users\XPMUser
+BUILD: [00:0000000000:PROG  ] Environment: IMG_SCREEN_MEDIUM=1
+BUILD: [00:0000000000:PROG  ] Environment: IMG_XRST_THEME_0=1
+BUILD: [00:0000000000:PROG  ] Environment: INSTALL_TYPE=WDS-USMT
+BUILD: [00:0000000000:PROG  ] Environment: LOCALAPPDATA=C:\Users\XPMUser\AppData\Local
+BUILD: [00:0000000000:PROG  ] Environment: LOCALE=0409
+BUILD: [00:0000000000:PROG  ] Environment: LOGONSERVER=\\MYWIN7VM
+BUILD: [00:0000000000:PROG  ] Environment: MSBuildLoadMicrosoftTargetsReadOnly=true
+BUILD: [00:0000000000:PROG  ] Environment: NUMBER_OF_PROCESSORS=1
+BUILD: [00:0000000000:PROG  ] Environment: OS=Windows_NT
+BUILD: [00:0000000000:PROG  ] Environment: Path=C:\WINCE800\sdk\bin\i386\x86;C:\WINCE800\sdk\bin\i386;C:\WINCE800\sdk\bin\i386\x86;C:\WINCE800\public\common\oak\Bin\i386;C:\WINCE800\private\bin\i386;C:\WINCE800\private\bat;C:\WINCE800\public\common\oak\misc;C:\WINCE800\developr\XPMUser;C:\Program Files\Common Files\Microsoft Shared\Microsoft Online Services;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft Application Virtualization Client;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft Visual Studio 11.0\Common7\IDE\Extensions\Microsoft\VsGraphics;C:\Windows\system32;C:\Windows;C:\Program Files\Microsoft Platform Builder\8.00\cepb\ideVS
+BUILD: [00:0000000000:PROG  ] Environment: PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+BUILD: [00:0000000000:PROG  ] Environment: PBCONFIG=-234464094
+BUILD: [00:0000000000:PROG  ] Environment: PBWORKSPACE=C:\WINCE800\OSDesigns\MyXAML1251\MyXAML1251\MyXAML1251.pbxml
+BUILD: [00:0000000000:PROG  ] Environment: PBWORKSPACEROOT=C:\WINCE800\OSDesigns\MyXAML1251\MyXAML1251
+BUILD: [00:0000000000:PROG  ] Environment: PkgDefApplicationConfigFile=C:\Users\XPMUser\AppData\Local\Microsoft\VisualStudio\11.0\devenv.exe.config
+BUILD: [00:0000000000:PROG  ] Environment: PROCESSOR_ARCHITECTURE=x86
+BUILD: [00:0000000000:PROG  ] Environment: PROCESSOR_IDENTIFIER=x86 Family 6 Model 23 Stepping 10, GenuineIntel
+BUILD: [00:0000000000:PROG  ] Environment: PROCESSOR_LEVEL=6
+BUILD: [00:0000000000:PROG  ] Environment: PROCESSOR_REVISION=170a
+BUILD: [00:0000000000:PROG  ] Environment: ProgramData=C:\ProgramData
+BUILD: [00:0000000000:PROG  ] Environment: ProgramFiles=C:\Program Files
+BUILD: [00:0000000000:PROG  ] Environment: PROMPT=$P$G
+BUILD: [00:0000000000:PROG  ] Environment: PSModulePath=C:\Windows\system32\WindowsPowerShell\v1.0\Modules\
+BUILD: [00:0000000000:PROG  ] Environment: PUBLIC=C:\Users\Public
+BUILD: [00:0000000000:PROG  ] Environment: SG_OUTPUT_ROOT=C:\WINCE800\OSDesigns\MyXAML1251\MyXAML1251\Wince800\EBOX3300_x86_Debug\cesysgen
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_CMD=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_CTLPNL2=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_DATETIMECPL=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_DISPLAYCPL=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_ETHERNETCPL=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_INPUTCPL=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_REGIONALCPL=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_SHELL=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_SNDSCHEMECPL=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_XAMLMSGBOX=1
+BUILD: [00:0000000000:PROG  ] Environment: SYSGEN_XRSHELL=1
+BUILD: [00:0000000000:PROG  ] Environment: SystemDrive=C:
+BUILD: [00:0000000000:PROG  ] Environment: SystemRoot=C:\Windows
+BUILD: [00:0000000000:PROG  ] Environment: TEMP=C:\Temp
+BUILD: [00:0000000000:PROG  ] Environment: TMP=C:\Temp
+BUILD: [00:0000000000:PROG  ] Environment: USERDOMAIN=MyWin7VM
+BUILD: [00:0000000000:PROG  ] Environment: USERNAME=XPMUser
+BUILD: [00:0000000000:PROG  ] Environment: USERPROFILE=C:\Users\XPMUser
+BUILD: [00:0000000000:PROG  ] Environment: USING_PB_WORKSPACE_ENVIRONMENT=1
+BUILD: [00:0000000000:PROG  ] Environment: VCBUILD_LOCATION=C:\Program Files\Microsoft Visual Studio 11.0\VC
+BUILD: [00:0000000000:PROG  ] Environment: VisualStudioDir=C:\Users\XPMUser\Documents\Visual Studio 2012
+BUILD: [00:0000000000:PROG  ] Environment: VisualStudioEdition=Microsoft Visual Studio Professional 2012
+BUILD: [00:0000000000:PROG  ] Environment: VisualStudioVersion=11.0
+BUILD: [00:0000000000:PROG  ] Environment: VS110COMNTOOLS=C:\Program Files\Microsoft Visual Studio 11.0\Common7\Tools\
+BUILD: [00:0000000000:PROG  ] Environment: VSLANG=1033
+BUILD: [00:0000000000:PROG  ] Environment: WECSDK=Veloce
+BUILD: [00:0000000000:PROG  ] Environment: WINCEDEBUG=debug
+BUILD: [00:0000000000:PROG  ] Environment: WINCEMAP=1
+BUILD: [00:0000000000:PROG  ] Environment: WINCEREL=1
+BUILD: [00:0000000000:PROG  ] Environment: windir=C:\Windows
+BUILD: [00:0000000000:PROG  ] Environment: windows_tracing_flags=3
+BUILD: [00:0000000000:PROG  ] Environment: windows_tracing_logfile=C:\BVTBin\Tests\installpackage\csilogfile.log
+BUILD: [00:0000000000:PROG  ] Environment: _BUILDOUTPUTFILTER_RUNNING=1
+BUILD: [00:0000000000:PROG  ] Environment: _DEPTREES=winceos dcom wgi html netcf servers cellcore ossvcs shell directx ostest CEBASE
+BUILD: [00:0000000000:PROG  ] Environment: _DOTNET20ROOT=C:\Windows\Microsoft.NET\Framework\v2.0.50727
+BUILD: [00:0000000000:PROG  ] Environment: _DOTNET20SP2INSTALLED=1
+BUILD: [00:0000000000:PROG  ] Environment: _DOTNET30ROOT=C:\Windows\Microsoft.NET\Framework\v3.0
+BUILD: [00:0000000000:PROG  ] Environment: _DOTNET30SP2INSTALLED=1
+BUILD: [00:0000000000:PROG  ] Environment: _DOTNET35ROOT=C:\Windows\Microsoft.NET\Framework\v3.5
+BUILD: [00:0000000000:PROG  ] Environment: _DOTNET35SP1INSTALLED=1
+BUILD: [00:0000000000:PROG  ] Environment: _DOTNET40ROOT=C:\Windows\Microsoft.NET\Framework\v4.0.30319
+BUILD: [00:0000000000:PROG  ] Environment: _DOTNET45INSTALLED=1
+BUILD: [00:0000000000:PROG  ] Environment: _DOTNETSDKROOT=C:\Windows\Microsoft.NET\Framework\v4.0.30319\
+BUILD: [00:0000000000:PROG  ] Environment: _FLATRELEASEDIR=C:\WINCE800\OSDesigns\MyXAML1251\MyXAML1251\RelDir\EBOX3300_x86_Debug
+BUILD: [00:0000000000:PROG  ] Environment: _HOSTCPUTYPE=i386
+BUILD: [00:0000000000:PROG  ] Environment: _MAJORVERSION=8
+BUILD: [00:0000000000:PROG  ] Environment: _MAKEENVROOT=C:\WINCE800\public\common\oak\misc
+BUILD: [00:0000000000:PROG  ] Environment: _MINORVERSION=00
+BUILD: [00:0000000000:PROG  ] Environment: _OSDESIGNDDKROOT=C:\WINCE800\OSDesigns\MyXAML1251\MyXAML1251\Wince800\EBOX3300_x86_Debug\ddk
+BUILD: [00:0000000000:PROG  ] Environment: _OSDESIGNOAKROOT=C:\WINCE800\OSDesigns\MyXAML1251\MyXAML1251\Wince800\EBOX3300_x86_Debug\oak
+BUILD: [00:0000000000:PROG  ] Environment: _OSDESIGNROOT=C:\WINCE800\OSDesigns\MyXAML1251\MyXAML1251
+BUILD: [00:0000000000:PROG  ] Environment: _OSDESIGNSDKROOT=C:\WINCE800\OSDesigns\MyXAML1251\MyXAML1251\Wince800\EBOX3300_x86_Debug\sdk
+BUILD: [00:0000000000:PROG  ] Environment: _PB_INSTALL_ROOT=C:\PROGRA~1\MIFAB2~1\8.00
+BUILD: [00:0000000000:PROG  ] Environment: _PLATFORMDRIVE=C:
+BUILD: [00:0000000000:PROG  ] Environment: _PLATFORMROOT=C:\WINCE800\platform
+BUILD: [00:0000000000:PROG  ] Environment: _PREWINCEPATH=C:\Program Files\Common Files\Microsoft Shared\Microsoft Online Services;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft Application Virtualization Client;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft Visual Studio 11.0\Common7\IDE\Extensions\Microsoft\VsGraphics
+BUILD: [00:0000000000:PROG  ] Environment: _PRIVATEDRIVE=C:
+BUILD: [00:0000000000:PROG  ] Environment: _PRIVATEROOT=C:\WINCE800\private
+BUILD: [00:0000000000:PROG  ] Environment: _PROJECTDDKROOT=C:\WINCE800\public\CEBASE\ddk
+BUILD: [00:0000000000:PROG  ] Environment: _PROJECTOAKROOT=C:\WINCE800\public\CEBASE\oak
+BUILD: [00:0000000000:PROG  ] Environment: _PROJECTROOT=C:\WINCE800\public\CEBASE
+BUILD: [00:0000000000:PROG  ] Environment: _PROJECTSDKROOT=C:\WINCE800\public\CEBASE\sdk
+BUILD: [00:0000000000:PROG  ] Environment: _PROJPUBLICROOT=C:\WINCE800\OSDesigns\MyXAML1251\MyXAML1251\WINCE800\PUBLIC
+BUILD: [00:0000000000:PROG  ] Environment: _PUBLICDRIVE=C:
+BUILD: [00:0000000000:PROG  ] Environment: _PUBLICROOT=C:\WINCE800\public
+BUILD: [00:0000000000:PROG  ] Environment: _SDKDRIVE=C:
+BUILD: [00:0000000000:PROG  ] Environment: _SDKROOT=C:\WINCE800\sdk
+BUILD: [00:0000000000:PROG  ] Environment: _TARGETPLATROOT=C:\WINCE800\platform\EBOX3300
+BUILD: [00:0000000000:PROG  ] Environment: _TGTCPU=x86
+BUILD: [00:0000000000:PROG  ] Environment: _TGTCPUFAMILY=x86
+BUILD: [00:0000000000:PROG  ] Environment: _TGTOS=CE
+BUILD: [00:0000000000:PROG  ] Environment: _TGTPLAT=EBOX3300
+BUILD: [00:0000000000:PROG  ] Environment: _TGTPROJ=CEBASE
+BUILD: [00:0000000000:PROG  ] Environment: _TOOLSSDKDRIVE=C:
+BUILD: [00:0000000000:PROG  ] Environment: _TOOLSSDKROOT=C:\WINCE800\tools\public\ext
+BUILD: [00:0000000000:PROG  ] Environment: _WINCECALLED=1
+BUILD: [00:0000000000:PROG  ] Environment: _WINCEDRIVE=C:
+BUILD: [00:0000000000:PROG  ] Environment: _WINCEOSVER=800
+BUILD: [00:0000000000:PROG  ] Environment: _WINCEROOT=C:\WINCE800
+BUILD: [00:0000000000:PROG  ] Environment: __COMPAT_LAYER=RunAsAdmin
+BUILD: [00:0000000010:PROGC ] Running passes WCEFILES0, MIDL, MC, ASN, THUNK, RUN_WPP, XRPACK, PRECOMPHEADER, COMPILE, RENUMBERICONIDS, RES2RES, LIB, EXPLIB, LINK, LOCALIZE, MANAGEDRESX, MANAGEDMOD, MANAGEDDLL, MANAGEDEXE, MANAGEDWIN, POSTBUILD for x86.
+BUILD: [00:0000000010:PROGC ] Loading database "C:\wince800\platform\ebox3300\Buildx86debug.dat".
+BUILD: [00:0000000020:PROGC ] Done.
+BUILD: [00:0000000020:PROGC ] Computing include file dependencies:
+BUILD: [01:0000000060:PROGC ] Scan C:\wince800\platform\ebox3300\src\common\kitl\base\
+BUILD: [00:0000000731:PROG  ] Waiting for 1 worker threads.
+BUILD: [01:0000000731:PROGC ] Scan C:\wince800\platform\ebox3300\src\common\kitl\baseboot\
+BUILD: [00:0000001402:PROGC ] Directory scanning complete.
+BUILD: [00:0000001402:PROGC ] Saving Master Database complete.
+BUILD: [00:0000001402:PROGC ] Starting WCEFILES0 Pass.
+BUILD: [00:0000001402:PROGC ] Analyzing project dependency information for pass WCEFILES0.
+BUILD: [00:0000001402:PROGC ] Starting MIDL Pass.
+BUILD: [00:0000001402:PROGC ] Analyzing project dependency information for pass MIDL.
+BUILD: [00:0000001402:PROGC ] Starting MC Pass.
+BUILD: [00:0000001402:PROGC ] Analyzing project dependency information for pass MC.
+BUILD: [00:0000001402:PROGC ] Starting ASN Pass.
+BUILD: [00:0000001402:PROGC ] Analyzing project dependency information for pass ASN.
+BUILD: [00:0000001402:PROGC ] Starting THUNK Pass.
+BUILD: [00:0000001402:PROGC ] Analyzing project dependency information for pass THUNK.
+BUILD: [00:0000001402:PROGC ] Starting RUN_WPP Pass.
+BUILD: [00:0000001402:PROGC ] Analyzing project dependency information for pass RUN_WPP.
+BUILD: [00:0000001412:PROGC ] Starting XRPACK Pass.
+BUILD: [00:0000001412:PROGC ] Analyzing project dependency information for pass XRPACK.
+BUILD: [00:0000001412:PROGC ] Starting PRECOMPHEADER Pass.
+BUILD: [00:0000001412:PROGC ] Analyzing project dependency information for pass PRECOMPHEADER.
+BUILD: [00:0000001412:PROGC ] Starting COMPILE Pass.
+BUILD: [00:0000001412:PROGC ] Analyzing project dependency information for pass COMPILE.
+BUILD: [00:0000001412:PROGC ] Warning(s) in directory "C:\wince800\platform\ebox3300\src\common\kitl\base\".
+BUILD: [00:0000001412:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\wince800\platform\common\src\x86\common\kitl\base\kdioctl_x86.c.
+BUILD: [00:0000001412:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitldrv_x86.c.
+BUILD: [00:0000001412:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitleth_x86.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitlioctl.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitlser_x86.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitlmain_x86.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitl_x86.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\ethgsec_x86.c.
+BUILD: [00:0000001432:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\pcihelp_x86.c.
+BUILD: [00:0000001432:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\ResourceManager.cpp.
+BUILD: [00:0000001432:PROGC ] Building COMPILE Pass in C:\wince800\platform\ebox3300\src\common\kitl\base\ directory.
+BUILD: [00:0000001442:PROG  ] 'NMAKE.EXE TargetCompilePass  -nologo BUILDMSG=Stop.  BUILDROOT=C:\WINCE800\platform\ebox3300 NOLINK=1 NOPASS0=1'
+BUILD: [01:0000001492:INFO  ] makefile.def: Including C:\WINCE800\public\common\oak\misc\Sources.default
+BUILD: [01:0000001502:INFO  ] makefile.def: BUILDROOT is C:\WINCE800\platform\ebox3300
+BUILD: [01:0000001502:INFO  ] makefile.def: Including C:\WINCE800\platform\ebox3300\sources.cmn
+BUILD: [01:0000001542:INFO  ] makefile.def: Including C:\wince800\platform\ebox3300\src\common\kitl\base\sources
+BUILD: [01:0000001552:INFO  ] makefile.def: Including C:\WINCE800\public\common\oak\misc\Sources.CE
+BUILD: [01:0000001562:INFO  ] Directory: C:\wince800\platform\ebox3300\src\common\kitl\base
+BUILD: [01:0000001562:INFO  ] TARGETNAME: bsp_kitl_x86
+BUILD: [01:0000001562:INFO  ] makefile.def: Including C:\WINCE800\public\common\oak\misc\sources.ReleaseType_PLATFORM
+BUILD: [01:0000001602:PROGC ] Error(s) in directory "C:\wince800\platform\ebox3300\src\common\kitl\base\".
+BUILD: [01:0000001602:ERRORE] NMAKE : fatal error U1073: don't know how to make 'C:\wince800\platform\ebox3300\src\common\kitl\base\obj\x86\debug\kdioctl_x86.obj'
+BUILD: [01:0000001612:INFO  ] Stop.
+BUILD: [01:0000001612:ERRORE] TargetCompilePass  -nologo BUILDMSG=Stop.  BUILDROOT=C:\WINCE800\platform\ebox3300 NOLINK=1 NOPASS0=1 failed - rc = 2
+BUILD: [00:0000001633:PROGC ]                        Files  Warnings  Errors
+BUILD: [00:0000001633:PROGC ] Midl                       0         0       0
+BUILD: [00:0000001633:PROGC ] Message                    0         0       0
+BUILD: [00:0000001633:PROGC ] Precomp Header             0         0       0
+BUILD: [00:0000001633:PROGC ] Resource                   0         0       0
+BUILD: [00:0000001633:PROGC ] XRPack                     0         0       0
+BUILD: [00:0000001633:PROGC ] MASM                       0         0       0
+BUILD: [00:0000001633:PROGC ] SHASM                      0         0       0
+BUILD: [00:0000001633:PROGC ] ARMASM                     0         0       0
+BUILD: [00:0000001633:PROGC ] C++                        0         0       0
+BUILD: [00:0000001633:PROGC ] C                          0         0       0
+BUILD: [00:0000001633:PROGC ] CheckLibs                  0         0       0
+BUILD: [00:0000001633:PROGC ] Static Libraries           0         0       0
+BUILD: [00:0000001633:PROGC ] Exe's                      0         0       0
+BUILD: [00:0000001633:PROGC ] Dll's                      0         0       0
+BUILD: [00:0000001633:PROGC ] Preprocess deffile         0         0       0
+BUILD: [00:0000001633:PROGC ] Resx                       0         0       0
+BUILD: [00:0000001633:PROGC ] CSharp Compile             0         0       0
+BUILD: [00:0000001633:PROGC ] VCProj Compile             0         0       0
+BUILD: [00:0000001633:PROGC ] NETCF Build                0         0       0
+BUILD: [00:0000001633:PROGC ] Localization               0         0       0
+BUILD: [00:0000001633:PROGC ] Other                      0         0       2
+BUILD: [00:0000001633:PROGC ] 
+BUILD: [00:0000001633:PROGC ] Total                      0         0       2
+BUILD: [00:0000001633:PROGC ] 
+BUILD: [00:0000001633:PROGC ] 0 Warnings,  2 Errors
+BUILD: [00:0000001633:PROGC ] GetSystemTimes (seconds): Idle: 0     Kernel: 0     User: 0    
+BUILD: [00:0000001633:PROGC ] Elapsed  time  (seconds): 1    

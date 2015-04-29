@@ -1,0 +1,9 @@
+OBJECTS=\
+    C:\wince800\platform\86duino_80b\src\drivers\ehci\obj\x86\retail\cpipe.obj\
+    C:\wince800\platform\86duino_80b\src\drivers\ehci\obj\x86\retail\chw.obj\
+    C:\wince800\platform\86duino_80b\src\drivers\ehci\obj\x86\retail\ctd.obj\
+    C:\wince800\platform\86duino_80b\src\drivers\ehci\obj\x86\retail\trans.obj\
+    C:\wince800\platform\86duino_80b\src\drivers\ehci\obj\x86\retail\system.obj\
+    C:\wince800\platform\86duino_80b\src\drivers\ehci\obj\x86\retail\cehcd.obj\
+    C:\wince800\platform\86duino_80b\src\drivers\ehci\obj\x86\retail\usb2lib.obj
+

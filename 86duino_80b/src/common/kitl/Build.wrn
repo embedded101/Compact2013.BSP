@@ -1,0 +1,11 @@
+BUILD: [Thread:SystemTickCount:Type  ] Message
+BUILD: [00:0000001412:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\wince800\platform\common\src\x86\common\kitl\base\kdioctl_x86.c.
+BUILD: [00:0000001412:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitldrv_x86.c.
+BUILD: [00:0000001412:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitleth_x86.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitlioctl.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitlser_x86.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitlmain_x86.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\kitl_x86.c.
+BUILD: [00:0000001422:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\ethgsec_x86.c.
+BUILD: [00:0000001432:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\pcihelp_x86.c.
+BUILD: [00:0000001432:WARNN ] C:\wince800\platform\ebox3300\src\common\kitl\base\: Missing source file: C:\WINCE800\platform\common\src\x86\common\kitl\base\ResourceManager.cpp.

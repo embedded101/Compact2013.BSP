@@ -1,0 +1,564 @@
+;
+;
+;  File:          Platform.reg for 86Duino_80B BSP
+;  Last updated:  March 23, 2015
+;
+
+; Our variables
+#define BUILTIN_ROOT HKEY_LOCAL_MACHINE\Drivers\BuiltIn
+#define PCI_BUS_ROOT $(BUILTIN_ROOT)\PCI
+#define DRIVERS_DIR $(_PUBLICROOT)\common\oak\drivers
+
+; @XIPREGION IF PLATFORM_REGISTRY_MISC
+    ; HIVE BOOT SECTION
+        ; This key controls disables IRQ sharing with the KITL NIC.
+        ; IRQ sharing with the KITL NIC can cause debugger hangs if
+        ; there is a small flaw in any driver or hardware on that IRQ.
+        IF BSP_NOKITLSHAREDIRQ
+        [HKEY_LOCAL_MACHINE\Platform]
+            "DisableKITLSharedIRQ"=dword:1
+        ENDIF BSP_NOKITLSHAREDIRQ
+    ; END HIVE BOOT SECTION
+    [HKEY_LOCAL_MACHINE\Platform]
+        ; Platform type: 1=DK3, 2=Perp 3=Rose
+        "Type"=dword:2
+        "Name"=LOC_PLATFORMNAME
+        "SoftRTC"=dword:0
+
+    [HKEY_LOCAL_MACHINE\Ident]
+       "Name"="86Duino"
+       "Desc"="Compact 2013 OS image created with 86Duino_80B BSP."
+; @XIPREGION ENDIF PLATFORM_REGISTRY_MISC
+
+; @CESYSGEN IF CE_MODULES_FSDMGR
+; @CESYSGEN IF CE_MODULES_USBDISK6
+    ; Override default Folder Name for USB Storage.
+    ;
+    [HKEY_LOCAL_MACHINE\System\StorageManager\Profiles\USBHDProfile]
+        "Folder"="USB Storage"
+; @CESYSGEN ENDIF CE_MODULES_USBDISK6
+; @CESYSGEN ENDIF CE_MODULES_FSDMGR
+
+; @CESYSGEN IF FILESYS_FSREGHIVE
+; HIVE BOOT SECTION
+
+    ; The RegistryFlags value determines how registry changes are committed to 
+    ; persistent storage.
+    ;
+    ; 0x00000000    Default setting. Flushes the registry nondeterministically.
+    ; 0x00000001    Enables aggressive flushing
+    ; 0x00000002    Disables background flushing
+    ;
+    [HKEY_LOCAL_MACHINE\init\BootVars]
+        "RegistryFlags"=dword:0
+     
+    IF BSP_Enable_AggressiveFlushing
+        "RegistryFlags"=dword:1
+    ENDIF BSP_Enable_AggressiveFlushing
+      
+
+; END HIVE BOOT SECTION
+; @CESYSGEN ENDIF FILESYS_FSREGHIVE
+
+; @CESYSGEN IF CE_MODULES_DEVICE
+
+    ; Resources available at time of device.exe initialization.
+    ; Key names are descriptive; resource ids are definitive.
+    ; System ids are defined in ddk\inc\resmgr.h.
+    ; HIVE BOOT SECTION
+        [HKEY_LOCAL_MACHINE\Drivers\Resources\IRQ]
+            "Identifier"=dword:1
+            "Minimum"=dword:1
+            "Space"=dword:F
+            "Ranges"="1,3-7,9-0xF"
+            "Shared"="1,3-7,9-0xF"
+
+        ; I/O ranges are reserved for all drivers listed in this file that are not
+        ; part of an expansion bus (PCI, etc).  If your platform doesn't
+        ; have one of these peripherals you may edit this list accordingly.  This
+        ; sample configuration assumes that, if you have any COM port you have all of
+        ; the lower-numbered ones as well.
+        [HKEY_LOCAL_MACHINE\Drivers\Resources\IO]
+            "Identifier"=dword:2
+            "Minimum"=dword:0
+            "Space"=dword:10000
+
+            IF BSP_NOSERIAL
+                "Ranges"="0-0x5F,0x65-0x277,0x284-0x38F,0x392-0x3DF,0x3E2-0xFFFF"
+            ENDIF BSP_NOSERIAL
+            IF BSP_NOSERIAL !
+                "Ranges"="0-0x5F,0x65-0x277,0x284-0x2F7,0x300-0x38F,0x392-0x3DF,0x3E2-0xFFFF"
+            ENDIF BSP_NOSERIAL !
+            IF BSP_SERIAL2
+                "Ranges"="0-0x5F,0x65-0x277,0x284-0x2F7,0x300-0x38F,0x392-0x3DF,0x3E2-0x3E7,0x3F0-0xFFFF"
+            ENDIF BSP_SERIAL2
+            IF BSP_SERIAL3
+                "Ranges"="0-0x5F,0x65-0x277,0x284-0x2E7,0x2F0-0x2F7,0x300-0x38F,0x392-0x3DF,0x3E2-0x3E7,0x3F0-0xFFFF"
+            ENDIF BSP_SERIAL3
+    ; END HIVE BOOT SECTION
+
+; @CESYSGEN IF CE_MODULES_DEVICE
+[HKEY_LOCAL_MACHINE\Drivers\Builtin\DMA]
+   "Prefix"="DMA"
+   "Index"=dword:1
+   "ResetOnResume"=dword:1
+   "Priority256"=dword:110
+   "IClass"="{52729EFF-F9F8-4894-B450-AFAFC5D5E96D}"
+   "Dll"="dma8237_x86_ms_v1.dll"
+   "Order"=dword:0
+; Driver Specific
+    "MemBase"=dword:100000
+    "MemLen" =dword:30000
+    "EnableMemoryToMemory"=dword:1
+
+[HKEY_LOCAL_MACHINE\Drivers\DMA]
+   "DriversName"="DMA1:"
+
+; @CESYSGEN ENDIF CE_MODULES_DEVICE
+
+
+    ; ---------------------------- BEGIN PCI DEVICES ----------------------------
+    ; @CESYSGEN IF CE_MODULES_PCI
+        ; @XIPREGION IF DEFAULT_CEPC_REG
+            IF BSP_NOPCIBUS !
+                ; HIVE BOOT SECTION
+                    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI]
+                        "NoConfig"=dword:0
+                        "MemBase"=dword:80000000
+                        "MemLen" =dword:7b000000
+                        "IoBase"=dword:A000
+                        "IoLen" =dword:6000
+                    #include "$(DRIVERS_DIR)\pcibus\pcibus.reg"
+                ; END HIVE BOOT SECTION
+
+                ;Because the BIOS configure the PCI-PCI bridge and it is different from how we configured.
+                ;So we can not touch the window. Set NoConfig to all PCI to PCI Bridge to indicate PCiBus do
+                ;not configure PCI-PCI bridge window.
+                [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI\Template\PCI-PCI-BRIDGE]
+                    "Class"=dword:06
+                    "SubClass"=dword:04
+                    "NoConfig"=dword:1
+
+
+                ; @CESYSGEN IF CE_MODULES_WAVEAPI
+                    IF BSP_NOAUDIO !
+
+
+                    ENDIF BSP_NOAUDIO !
+                ; @CESYSGEN ENDIF CE_MODULES_WAVEAPI
+
+                ; @CESYSGEN IF CE_MODULES_USBD
+                    IF BSP_NOUSB !
+                        IF BSP_USB_OHCI
+                            #include "$(DRIVERS_DIR)\usb\hcd\ohc\ohci.reg"
+                        ENDIF BSP_USB_OHCI
+                        IF BSP_USB_UHCI
+                            #include "$(DRIVERS_DIR)\usb\hcd\uhc\uhci.reg"
+                        ENDIF BSP_USB_UHCI
+                        IF BSP_USB_EHCI
+                        IF IMGEHCICERT
+                            #include "$(DRIVERS_DIR)\usb\hcd\usb20\ehcipdd\ehcdcert.reg"
+                        ELSE
+                            #include "$(DRIVERS_DIR)\usb\hcd\usb20\ehcipdd\ehcd.reg"
+                        ENDIF IMGEHCICERT
+                        ENDIF BSP_USB_EHCI
+                    ENDIF BSP_NOUSB !
+                ; @CESYSGEN ENDIF CE_MODULES_USBD
+
+;-- ATAPI @ PCI bus ------------------------------------------------------------
+; @CESYSGEN IF CE_MODULES_ATAPI
+; @XIPREGION IF PACKAGE_OEMXIPKERNEL
+; HIVE BOOT SECTION
+IF BSP_NOIDE !
+
+; @CESYSGEN IF ATAPI_ATAPI_PCIO_CD
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI\Template\GenericIDE]
+    "SpawnFunction"="CreateNativePCIHDCD"   ; hard disk + CD/DVD
+; @CESYSGEN ELSE
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI\Template\GenericIDE]
+    "SpawnFunction"="CreateNativePCIHD"     ; hard disk only
+; @CESYSGEN ENDIF ATAPI_ATAPI_PCIO_CD
+
+; @CESYSGEN IF ATAPI_ATAPI_PCIO
+#include "$(DRIVERS_DIR)\block\atapi\genericide.reg"
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI\Template\GenericIDE]
+; @CESYSGEN IF FILESYS_FSREGHIVE
+    "Flags"=dword:00001000
+; @CESYSGEN ENDIF FILESYS_FSREGHIVE
+    "LegacyIRQ"=dword:0e            ; The primary legacy IRQ, commonly 0xe on x86
+    "StatusPollCycles"=dword:100    ; Status register DRQ/BSY polling; 256 poll cycles
+    "StatusPollCyclePause"=dword:05 ; Status register DRQ/BSY polling; 5 milliseconds between poll cycles
+    "IsrDll"="giisr.dll"            ; bus-agnostic; installable ISR
+    "IsrHandler"="ISRHandler"       ; bus-agnostic; installable ISR
+    "ConfigEntry"="NativeConfig"    ; PCI configuration entry point
+
+IF BSP_VORTEX86DX_9120A
+    ; set BSP_VORTEX86DX_9120A=1 on EBOX 3300 (Vortex86DX – 9120A)
+    ; The NativeConfig can override LegacyIRQ by ProgIF setting.
+    "ConfigEntry"=-                 ; PCI configuration entry point
+    "SubClass"=dword:80
+    "LegacyIRQ"=-                   ; The primary legacy IRQ, -1 for native mode
+ENDIF BSP_VORTEX86DX_9120A
+
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI\Template\GenericIDE\Device0]
+    "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}","{CD7D2039-29F0-449d-AAD2-C0714EBD9A4D}","{2D170AA2-02C3-4437-B268-37D884C9195A}"
+; @CESYSGEN IF FILESYS_FSREGHIVE
+    "Flags"=dword:00001000
+; @CESYSGEN ENDIF FILESYS_FSREGHIVE
+    "DMA"=dword:01                  ; DMA {0=disable, 1=enable, 2=enable ATA only}
+    "DrqDataBlockSize"=dword:200    ; sector-aligned DRQ data block size (bytes), i.e., R/W Multiple sectors/interrupt {0=device default, 512, ..., 130560}
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI\Template\GenericIDE\Device1]
+    "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}","{CD7D2039-29F0-449d-AAD2-C0714EBD9A4D}","{2D170AA2-02C3-4437-B268-37D884C9195A}"
+; @CESYSGEN IF FILESYS_FSREGHIVE
+    "Flags"=dword:00001000
+; @CESYSGEN ENDIF FILESYS_FSREGHIVE
+    "DMA"=dword:01                  ; DMA {0=disable, 1=enable, 2=enable ATA only}
+    "DrqDataBlockSize"=dword:200    ; sector-aligned DRQ data block size (bytes), i.e., R/W Multiple sectors/interrupt {0=device default, 512, ..., 130560}
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI\Template\GenericIDE\Device2]
+    "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}","{CD7D2039-29F0-449d-AAD2-C0714EBD9A4D}","{2D170AA2-02C3-4437-B268-37D884C9195A}"
+; @CESYSGEN IF FILESYS_FSREGHIVE
+    "Flags"=dword:00001000
+; @CESYSGEN ENDIF FILESYS_FSREGHIVE
+    "DMA"=dword:01                  ; DMA {0=disable, 1=enable, 2=enable ATA only}
+    "DrqDataBlockSize"=dword:200    ; sector-aligned DRQ data block size (bytes), i.e., R/W Multiple sectors/interrupt {0=device default, 512, ..., 130560}
+[HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI\Template\GenericIDE\Device3]
+    "IClass"=multi_sz:"{A4E7EDDA-E575-4252-9D6B-4195D48BB865}","{CD7D2039-29F0-449d-AAD2-C0714EBD9A4D}","{2D170AA2-02C3-4437-B268-37D884C9195A}"
+; @CESYSGEN IF FILESYS_FSREGHIVE
+    "Flags"=dword:00001000
+; @CESYSGEN ENDIF FILESYS_FSREGHIVE
+    "DMA"=dword:01                  ; DMA {0=disable, 1=enable, 2=enable ATA only}
+    "DrqDataBlockSize"=dword:200    ; sector-aligned DRQ data block size (bytes), i.e., R/W Multiple sectors/interrupt {0=device default, 512, ..., 130560}
+; @CESYSGEN ENDIF ATAPI_ATAPI_PCIO
+
+ENDIF BSP_NOIDE !
+; END HIVE BOOT SECTION
+; @XIPREGION ENDIF PACKAGE_OEMXIPKERNEL
+; @CESYSGEN ENDIF CE_MODULES_ATAPI
+;-------------------------------------------------------------------------------
+
+                ; @CESYSGEN IF CE_MODULES_DISPLAY
+                    IF BSP_NODISPLAY !
+
+                        ; GWES will be able to auto-detect the display adapter if a candidate value
+                        ; points to the adapter's PCI instance.  Values from Candidate1 to Candidate32
+                        ; (decimal) are possible; GWES will examine them sequentially until it finds
+                        ; a match.
+
+                        
+                    ENDIF BSP_NODISPLAY !
+                ; @CESYSGEN ENDIF CE_MODULES_DISPLAY
+            ENDIF BSP_NOPCIBUS !
+       ; @XIPREGION IF DEFAULT_CEPC_REG
+    ; @CESYSGEN ENDIF CE_MODULES_PCI
+    ; ---------------------------- END PCI DEVICES ------------------------------
+
+    ; @CESYSGEN IF CE_MODULES_NDIS
+        IF BSP_NOETHER !
+        IF BSP_NIC_R6040
+
+        [HKEY_LOCAL_MACHINE\Comm\NDIS\Parms]
+            "NeverLoopbackPackets"=dword:1
+            "AllMiniportsDeserialized"=dword:1
+            "OptimizeReceiveHandling"=dword:1
+
+        [HKEY_LOCAL_MACHINE\Comm\R6040]
+            "DisplayName"="R6040 Ethernet Driver"
+            "Group"="NDIS"
+            "ImagePath"="R6040.dll"
+
+        [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\PCI\Template\R6040]
+            "Dll"="NDIS.dll"
+            "Class"=dword:02
+            "SubClass"=dword:00
+            "ProgIF"=dword:00
+            "VendorID"=multi_sz:"17F3"
+            "DeviceID"=multi_sz:"6040"
+            "Prefix"="NDS"
+            "Entry"="NdisPCIBusDeviceInit"
+
+        ENDIF BSP_NIC_R6040
+        ENDIF BSP_NOETHER !
+    ; @CESYSGEN ENDIF CE_MODULES_NDIS
+
+    ; @CESYSGEN IF CE_MODULES_SERIAL
+        ; @XIPREGION IF DEFAULT_CEPC_REG
+            ; Redirect paths from preventing the serial driver from using the same port as Serial Debug output
+            IF BSP_NOSERIAL !
+                ; HIVE BOOT SECTION
+                ; During load, we check the SerialDbgX regkey, where X is the physical
+                ; COM port selected for serial debug output. Then we disable the serial
+                ; driver of the corresponding value. Be sure that the pointed-to driver
+                ; is associated with the same physical COM port (IOBase value).
+                    [HKEY_LOCAL_MACHINE\Drivers\BootArg]
+
+                    IF BSP_ENABLE_SERIALDEBUG
+
+                        "SerialDbg1"="Drivers\\BuiltIn\\Serial1"
+
+                        ; IF BSP_SERIAL2
+                        ;    "SerialDbg2"="Drivers\\BuiltIn\\Serial2"
+                        ; ENDIF BSP_SERIAL2
+
+                    ENDIF BSP_ENABLE_SERIALDEBUG
+
+                ; END HIVE BOOT SECTION
+            ENDIF BSP NOSERIAL !
+
+            IF BSP_NOSERIAL !
+                [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\Serial1]
+                    "Flags"=dword:0010 ; User Mode: DEVFLAGS_LOAD_AS_USERPROC
+                    "Dll"="Com16550.Dll"
+                    "Prefix"="COM"
+                    "Order"=dword:0
+                    "Index"=dword:1
+                    "SysIntr"=dword:14
+                    "IoBase"=dword:03F8
+                    "IoLen"=dword:8
+                    "DeviceArrayIndex"=dword:0
+                    "IClass"="{CC5195AC-BA49-48a0-BE17-DF6D1B0173DD}"
+                    ; Turn on follows for Installable ISR (isr16550 supporting SOFTWARE FIFO
+                    ;"Irq"=dword:3
+                    ;"IsrDll"="isr16550.dll"
+                    ;"IsrHandler"="ISRHandler"
+                    ;"Flags"=dword:0 ; Disable User Mode if we need ISR16550.
+
+                [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\Serial1\Unimodem]
+                    "Tsp"="Unimodem.dll"
+                    "DeviceType"=dword:0
+                    "DevConfig"=hex: 10,00, 00,00, 05,00,00,00, 10,01,00,00, 00,4B,00,00, 00,00, 08, 00, 00, 00,00,00,00
+                     "FriendlyName"=LOC_FRIENDLYNAME_SERIAL
+
+                IF BSP_SERIAL2
+                    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\Serial2]
+                        "Flags"=dword:0010 ; User Mode: DEVFLAGS_LOAD_AS_USERPROC
+                        "Dll"="Com16550.Dll"
+                        "Prefix"="COM"
+                        "Order"=dword:1
+                        "Index"=dword:2
+                        "SysIntr"=dword:13
+                        "IoBase"=dword:02F8
+                        "IoLen"=dword:8
+                        "DeviceArrayIndex"=dword:1
+                        "IClass"="{CC5195AC-BA49-48a0-BE17-DF6D1B0173DD}"
+
+                    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\Serial2\Unimodem]
+                        "Tsp"="Unimodem.dll"
+                        "DeviceType"=dword:0
+                        "DevConfig"=hex: 10,00, 00,00, 05,00,00,00, 10,01,00,00, 00,4B,00,00, 00,00, 08, 00, 00, 00,00,00,00
+                        "FriendlyName"=LOC_FRIENDLYNAME_SERIAL2
+                ENDIF BSP_SERIAL2
+
+                IF BSP_SERIAL3
+                    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\Serial3]
+                        "Flags"=dword:0010 ; User Mode: DEVFLAGS_LOAD_AS_USERPROC
+                        "Dll"="Com16550.Dll"
+                        "Prefix"="COM"
+                        "Order"=dword:2
+                        "Index"=dword:3
+                        "SysIntr"=dword:1A
+                        "IoBase"=dword:03E8
+                        "IoLen"=dword:8
+                        "DeviceArrayIndex"=dword:2
+                        "IClass"="{CC5195AC-BA49-48a0-BE17-DF6D1B0173DD}"
+
+                    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\Serial3\Unimodem]
+                        "Tsp"="Unimodem.dll"
+                        "DeviceType"=dword:0
+                        "DevConfig"=hex: 10,00, 00,00, 05,00,00,00, 10,01,00,00, 00,4B,00,00, 00,00, 08, 00, 00, 00,00,00,00
+                        "FriendlyName"=LOC_FRIENDLYNAME_SERIAL3
+                ENDIF BSP_SERIAL3
+
+                IF BSP_SERIAL4
+                    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\Serial4]
+                        "Flags"=dword:0010 ; User Mode: DEVFLAGS_LOAD_AS_USERPROC
+                        "Dll"="Com16550.Dll"
+                        "Prefix"="COM"
+                        "Order"=dword:3
+                        "Index"=dword:4
+                        "SysIntr"=dword:1B
+                        "IoBase"=dword:02E8
+                        "IoLen"=dword:8
+                        "DeviceArrayIndex"=dword:3
+                        "IClass"="{CC5195AC-BA49-48a0-BE17-DF6D1B0173DD}"
+
+                    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\Serial4\Unimodem]
+                        "Tsp"="Unimodem.dll"
+                        "DeviceType"=dword:0
+                        "DevConfig"=hex: 10,00, 00,00, 05,00,00,00, 10,01,00,00, 00,4B,00,00, 00,00, 08, 00, 00, 00,00,00,00
+                        "FriendlyName"=LOC_FRIENDLYNAME_SERIAL4
+                ENDIF BSP_SERIAL4
+
+            ENDIF BSP_NOSERIAL !
+        ; @XIPREGION ENDIF DEFAULT_CEPC_REG
+    ; @CESYSGEN ENDIF CE_MODULES_SERIAL
+
+    ; @CESYSGEN IF CE_MODULES_BATTDRVR
+        #include "$(DRIVERS_DIR)\battdrvr\battdrvr.reg"
+    ; @CESYSGEN ENDIF CE_MODULES_BATTDRVR
+
+    ; @CESYSGEN IF CE_MODULES_NLEDDRVR
+        #include "$(DRIVERS_DIR)\nleddrvr\nleddrvr.reg"
+    ; @CESYSGEN ENDIF CE_MODULES_NLEDDRVR
+
+; @CESYSGEN ENDIF CE_MODULES_DEVICE
+
+;-- Pointer --------------------------------------------------------------------
+    ; @CESYSGEN IF CE_MODULES_POINTER
+        IF BSP_NOTOUCH !
+            [HKEY_LOCAL_MACHINE\HARDWARE\DEVICEMAP\TOUCH]
+                "DriverName"="keybddr.dll"
+        ENDIF BSP_NOTOUCH !
+        IF BSP_NOMOUSE !
+            #include "$(DRIVERS_DIR)\keybd\ps2_8042\8042mouse.reg"
+        ENDIF BSP_NOMOUSE !
+    ; @CESYSGEN ENDIF CE_MODULES_POINTER
+;-------------------------------------------------------------------------------
+
+;-- Keyboard -------------------------------------------------------------------
+    ; @CESYSGEN IF CE_MODULES_KEYBD
+        ; @XIPREGION IF DEFAULT_CEPC_REG
+            IF BSP_NOKEYBD !
+
+                    ; This gets the keyboard working, mapping a request for e0010409 onto the keyboard driver's 00000409
+                    [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Layouts\e0010409]
+                        "Keyboard Layout"="00000409"
+                    #include "$(DRIVERS_DIR)\keybd\keybd.reg"
+                    #include "$(DRIVERS_DIR)\keybd\LayMgr.reg"
+                    #include "$(DRIVERS_DIR)\keybd\ps2_8042\8042keybd.reg"
+
+            ENDIF BSP_NOKEYBD !
+        ; @XIPREGION ENDIF DEFAULT_CEPC_REG
+    ; @CESYSGEN ENDIF CE_MODULES_KEYBD
+;-------------------------------------------------------------------------------
+
+; @XIPREGION IF DEFAULT_CEPC_REG
+    ; @CESYSGEN IF CE_MODULES_COMMCTRL
+        ; Common control settings
+        ; Turns on hover tooltips (and off click tooltips)
+        [HKEY_LOCAL_MACHINE\SYSTEM\GWE\Commctrl]
+            "ToolTipsHold"=dword:0
+    ; @CESYSGEN ENDIF CE_MODULES_COMMCTRL
+
+    ; @CESYSGEN IF WCESHELLFE_MODULES_CTLPNL
+        ; This registry setting controls the checkboxes displayed in the Sounds CPL
+        ; under "enable clicks & taps". Set bit0 if you have a keyboard, set bit1 if
+        ; you have a touch screen. Set bit2 if you have HW buttons (NOTE: for now
+        ; HW buttons are mutually exclusive with the keyboard)
+        [HKEY_LOCAL_MACHINE\ControlPanel]
+            "InputConfig"=dword:1   ; 1 => keybd, but no touch screen
+    ; @CESYSGEN ENDIF WCESHELLFE_MODULES_CTLPNL
+
+    ; @CESYSGEN IF SHELL_MODULES_EXPLORER
+        ; This registry setting controls display of the Explorer's suspend menu button
+        [HKEY_LOCAL_MACHINE\Explorer]
+            "Suspend"=dword:0
+    ; @CESYSGEN ENDIF SHELL_MODULES_EXPLORER
+
+    ; @CESYSGEN IF CE_MODULES_BTAGSVC
+        [HKEY_LOCAL_MACHINE\Software\Microsoft\Bluetooth\HandsfreeProfileOn]
+    ; @CESYSGEN ENDIF CE_MODULES_BTAGSVC
+
+; @XIPREGION ENDIF DEFAULT_CEPC_REG
+
+IF BSP_Enable_WDT
+
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT0]
+        "Dll"="WDT_DRV.dll"
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT0]
+        "Prefix"="WDT"
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT0]
+        "Index"=dword:1
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT0]
+        "Order"=dword:0
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT0]
+        "M6117D"=dword:0
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT1]
+        "Dll"="WDT_DRV.dll"
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT1]
+        "Prefix"="WDT"
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT1]
+        "Index"=dword:2
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT1]
+        "Order"=dword:0
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT1]
+        "M6117D"=dword:1
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT1]
+        "FriendlyName"="WDT Driver"
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT0]
+        "FriendlyName"="WDT Driver"
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT0]
+        "IsrDll"="wdt_isr.dll"
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT0]
+        "IsrHandler"="ISRHandler"
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT1]
+        "IsrDll"="wdt_isr.dll"
+    [HKEY_LOCAL_MACHINE\Drivers\BuiltIn\WDT1]
+        "IsrHandler"="ISRHandler"
+
+ENDIF BSP_Enable_WDT
+
+
+; Auto Launch
+IF BSP_Enable_AutoLaunch
+    [HKEY_LOCAL_MACHINE\Init]
+        "Depend99"=hex:14,00,1e,00,32,00
+	"Launch99"="AutoLaunch.exe"
+
+    ; CoreCon
+    ;
+    IF BSP_AutoLaunch_CoreCon
+        [HKEY_LOCAL_MACHINE\System] 
+            "CoreConOverrideSecurity"=dword:1
+	    ;
+        [HKEY_LOCAL_MACHINE\Startup]
+            "Process0"="ConmanClient3.exe"
+            "Process0Delay"=dword:00001388 
+    ENDIF BSP_AutoLaunch_CoreCon 
+
+    IF BSP_Enable_IPBroadcast
+        [HKEY_LOCAL_MACHINE\Startup]
+            "Process1"="IPBroadcastCompact2013.exe"
+            "Process1Delay"=dword:00002710 
+    ENDIF BSP_Enable_IPBroadcast
+
+ENDIF BSP_Enable_AutoLaunch
+
+
+IF BSP_Enable_FTP
+    ; FTP server endable 
+    [HKEY_LOCAL_MACHINE\COMM\FTPD]
+        "IsEnabled"=dword:1
+        "UseAuthentication"=dword:0
+        "UserList"="@*;"
+        "AllowAnonymous"=dword:1
+        "AllowAnonymousUpload"=dword:1
+        "AllowAnonymousVroots"=dword:1
+        "DefaultDir"="\\"
+ENDIF BSP_Enable_FTP
+
+IF BSP_Enable_Telnet
+    ; Telnet server enable
+    [HKEY_LOCAL_MACHINE\COMM\TELNETD]
+        "IsEnabled"=dword:1
+        "UseAuthentication"=dword:0
+ENDIF BSP_Enable_Telnet
+
+IF BSP_Enable_StaticIP
+
+    ; Static IP address settings
+    [HKEY_LOCAL_MACHINE\Comm\PCI\R60401\Parms\TcpIp]
+        "EnableDHCP"=dword:0
+        "DefaultGateway"=multi_sz:"192.168.0.1"
+        "UseZeroBroadcast"=dword:0
+        "IpAddress"=multi_sz:"192.168.0.232"
+        "Subnetmask"=multi_sz:"255.255.255.0"
+
+    [HKEY_LOCAL_MACHINE\Comm\VMINI1\Parms\Tcpip]
+        "EnableDHCP"=dword:0
+        "IPAddress"="192.168.2.233"
+        "SubnetMask"="255.255.255.0"
+
+ENDIF BSP_Enable_StaticIP
+
+
+

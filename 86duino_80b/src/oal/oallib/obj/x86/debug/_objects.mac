@@ -1,0 +1,11 @@
+OBJECTS=\
+    C:\wince800\platform\ebox3300mx_80a\src\oal\oallib\obj\x86\debug\cache.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\oal\oallib\obj\x86\debug\debug.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\oal\oallib\obj\x86\debug\init.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\oal\oallib\obj\x86\debug\intr.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\oal\oallib\obj\x86\debug\ioctl.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\oal\oallib\obj\x86\debug\memory.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\oal\oallib\obj\x86\debug\power.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\oal\oallib\obj\x86\debug\schedule.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\oal\oallib\obj\x86\debug\timer.obj
+

@@ -1,0 +1,11 @@
+OBJECTS=\
+    C:\wince800\platform\86duino_80b\src\oal\oallib\obj\x86\retail\cache.obj\
+    C:\wince800\platform\86duino_80b\src\oal\oallib\obj\x86\retail\debug.obj\
+    C:\wince800\platform\86duino_80b\src\oal\oallib\obj\x86\retail\init.obj\
+    C:\wince800\platform\86duino_80b\src\oal\oallib\obj\x86\retail\intr.obj\
+    C:\wince800\platform\86duino_80b\src\oal\oallib\obj\x86\retail\ioctl.obj\
+    C:\wince800\platform\86duino_80b\src\oal\oallib\obj\x86\retail\memory.obj\
+    C:\wince800\platform\86duino_80b\src\oal\oallib\obj\x86\retail\power.obj\
+    C:\wince800\platform\86duino_80b\src\oal\oallib\obj\x86\retail\schedule.obj\
+    C:\wince800\platform\86duino_80b\src\oal\oallib\obj\x86\retail\timer.obj
+

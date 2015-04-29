@@ -1,0 +1,9 @@
+OBJECTS=\
+    C:\wince800\platform\ebox3300mx_80a\src\drivers\ehci\obj\x86\debug\cpipe.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\drivers\ehci\obj\x86\debug\chw.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\drivers\ehci\obj\x86\debug\ctd.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\drivers\ehci\obj\x86\debug\trans.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\drivers\ehci\obj\x86\debug\system.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\drivers\ehci\obj\x86\debug\cehcd.obj\
+    C:\wince800\platform\ebox3300mx_80a\src\drivers\ehci\obj\x86\debug\usb2lib.obj
+

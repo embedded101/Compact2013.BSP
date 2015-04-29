@@ -1,0 +1,4 @@
+OBJECTS=\
+    C:\wince800\platform\86duino_80b\src\common\kitl\baseboot\obj\x86\checked\kitldrv_x86.obj\
+    C:\wince800\platform\86duino_80b\src\common\kitl\baseboot\obj\x86\checked\kitleth_x86.obj
+

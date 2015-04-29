@@ -1,0 +1,4 @@
+OBJECTS=\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\iniparser\obj\x86\retail\parser.obj\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\iniparser\obj\x86\retail\util.obj
+

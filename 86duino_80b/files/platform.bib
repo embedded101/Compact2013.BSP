@@ -1,0 +1,109 @@
+;
+;  File:          Platform.bib for 86Duino_80B BSP
+;  Last updated:  March 23, 2015
+;
+MODULES
+;  Name            Path                                           Memory Type
+;  --------------  ---------------------------------------------  -----------
+
+; @CESYSGEN IF CE_MODULES_DEVICE
+    ; @CESYSGEN IF CE_MODULES_DEVICE
+        dma8237_x86_ms_v1.dll  $(_FLATRELEASEDIR)\dma8237_x86_ms_v1.dll    NK SHK
+    ; @CESYSGEN ENDIF CE_MODULES_DEVICE
+
+    ; @CESYSGEN IF CE_MODULES_GIISR
+        GIISR.dll       $(_FLATRELEASEDIR)\GIISR.dll                  NK  SHK
+    ; @CESYSGEN ENDIF CE_MODULES_GIISR
+
+
+    ; @CESYSGEN IF CE_MODULES_SERIAL
+        IF BSP_NOSERIAL !
+                ; The built-in com16550 driver supports any number of 16550 ports.
+                    com16550.dll    $(_FLATRELEASEDIR)\com16550.dll               NK SHQ
+                    isr16550.dll    $(_FLATRELEASEDIR)\isr16550.dll               NK SHK
+
+        ENDIF BSP_NOSERIAL !
+    ; @CESYSGEN ENDIF CE_MODULES_SERIAL
+
+    ; @CESYSGEN IF CE_MODULES_PCI
+        IF BSP_NOPCIBUS !
+            PCIbus.dll      $(_FLATRELEASEDIR)\PCIbus.dll                  NK SHK
+
+
+            ; @CESYSGEN IF CE_MODULES_USBD
+                ; USB drivers
+                IF BSP_NOUSB !
+                     IF BSP_USB_UHCI
+                        uhci.dll       $(_FLATRELEASEDIR)\uhci.dll                     NK SHK
+                     ENDIF BSP_USB_UHCI
+                     IF BSP_USB_OHCI
+                         ohci2.dll       $(_FLATRELEASEDIR)\ohci2.dll                   NK SHK
+                     ENDIF BSP_USB_OHCI
+                     IF BSP_USB_EHCI
+                     IF IMGEHCICERT
+                         ehcicert.dll   $(_FLATRELEASEDIR)\ehcicert.dll                 NK SHK
+                     ELSE
+                         ehci.dll       $(_FLATRELEASEDIR)\ehci.dll                     NK SHK
+                     ENDIF IMGEHCICERT
+                     ENDIF BSP_USB_EHCI
+                ENDIF BSP_NOUSB !
+            ; @CESYSGEN ENDIF CE_MODULES_USBD
+
+    ; @CESYSGEN IF CE_MODULES_NDIS
+        IF BSP_NIC_R6040
+            R6040.DLL         $(_FLATRELEASEDIR)\R6040.DLL                NK SHK
+        ENDIF BSP_NIC_R6040
+    ; @CESYSGEN ENDIF CE_MODULES_NDIS
+
+
+        ENDIF BSP_NOPCIBUS !
+    ; @CESYSGEN ENDIF CE_MODULES_PCI
+
+
+; @CESYSGEN IF CE_MODULES_KEYBD
+kbd8042.dll      $(_FLATRELEASEDIR)\kbd8042.dll                  NK  SHK
+; @CESYSGEN ENDIF CE_MODULES_KEYBD
+
+; @CESYSGEN ENDIF CE_MODULES_DEVICE
+
+; @CESYSGEN IF CE_MODULES_DISPLAY
+    IF BSP_NODISPLAY !
+        
+    ENDIF BSP_NODISPLAY !
+; @CESYSGEN ENDIF CE_MODULES_DISPLAY
+
+; @CESYSGEN IF SHELL_MODULES_MINSHELL
+	
+; @CESYSGEN ENDIF
+
+IF BSP_Enable_AutoLaunch    
+    AutoLaunch.exe  $(_TARGETPLATROOT)\Apps\AutoLaunch.exe    NK
+ENDIF BSP_Enable_AutoLaunch
+
+IF BSP_AutoLaunch_CoreCon
+    DeviceAgentTransport3.dll 	"$(CommonProgramFiles)\Microsoft Shared\Embedded Tools\CoreCon\$(VisualStudioVersion)\Target\wce800\x86\DeviceAgentTransport3.dll"   	NK
+    eDbgTL3.dll         	"$(CommonProgramFiles)\Microsoft Shared\Embedded Tools\CoreCon\$(VisualStudioVersion)\Target\wce800\x86\eDbgTL3.dll"                 	NK
+    TcpConnectionA3.dll 	"$(CommonProgramFiles)\Microsoft Shared\Embedded Tools\CoreCon\$(VisualStudioVersion)\Target\wce800\x86\TcpConnectionA3.dll"         	NK    
+ENDIF BSP_AutoLaunch_CoreCon
+
+IF BSP_Enable_WDT
+    WDT_DRV.dll  $(_TARGETPLATROOT)\bins\WDT_DRV.dll               NK     SHK
+    WDT_ISR.dll  $(_TARGETPLATROOT)\bins\WDT_ISR.dll               NK       K
+ENDIF BSP_Enable_WDT
+
+
+FILES
+;  Name            Path                                           Memory Type
+;  --------------  ---------------------------------------------  -----------
+
+
+
+IF BSP_AutoLaunch_CoreCon
+    clientshutdown3.exe    "$(CommonProgramFiles)\Microsoft Shared\Embedded Tools\CoreCon\$(VisualStudioVersion)\Target\wce800\x86\clientshutdown3.exe"    NK
+    CMAccept3.exe          "$(CommonProgramFiles)\Microsoft Shared\Embedded Tools\CoreCon\$(VisualStudioVersion)\Target\wce800\x86\CMAccept3.exe"          NK
+    ConmanClient3.exe  	   "$(CommonProgramFiles)\Microsoft Shared\Embedded Tools\CoreCon\$(VisualStudioVersion)\Target\wce800\x86\ConmanClient3.exe"      NK  
+ENDIF BSP_AutoLaunch_CoreCon
+
+IF BSP_Enable_IPBroadcast
+    IPBroadcastCompact2013.exe  $(_TARGETPLATROOT)\Apps\IPBroadcastCompact2013.exe           NK
+ENDIF BSP_Enable_IPBroadcast

@@ -1,0 +1,3 @@
+OBJECTS=\
+    C:\wince800\platform\86duino_80b\src\bootloader\biosloader\loader\fixed\fat16\obj\x86\retail\bldr_fat16.obj
+
